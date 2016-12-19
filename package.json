@@ -1,0 +1,23 @@
+{
+  "name": "b-rc",
+  "version": "0.0.1",
+  "description": "react components for budee front-end project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "component"
+  ],
+  "author": "freeman",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "omit.js": "^0.1.0",
+    "rc-animate": "^2.3.1",
+    "rc-util": "^4.0.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}
