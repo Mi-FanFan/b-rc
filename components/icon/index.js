@@ -1,20 +1,17 @@
 /**
  * Created by Freeman on 2016/12/19.
  */
-import React, {PropTypes} from 'react'
+import React from 'react';
 import classNames from 'classnames';
-const Icon = (props) => {
-  const classString = classNames(props.className);
+import omit from 'omit.js';
+export default (props) => {
 
-  return (
-      <i {...props} className={classString}/>
-  )
+  const {type, className = '', spin} = props;
+  const classString = classNames({
+    anticon: true,
+    'anticon-spin': !!spin || type === 'loading',
+    [`anticon-${type}`]: true,
+  }, className);
 
-}
-Icon.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
-  style: React.object,
-}
-
-export default Icon
+  return <i {...omit(props, ['type', 'spin'])} className={classString}/>;
+};

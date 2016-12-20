@@ -6,6 +6,7 @@ import Animate from 'rc-animate';
 import addEventListener from 'rc-util/lib/Dom/addEventListener';
 import classNames from 'classnames';
 import omit from 'omit.js';
+import Icon from '../icon'
 import getScroll from '../_util/getScroll';
 import getRequestAnimationFrame from '../_util/getRequestAnimationFrame';
 
@@ -34,15 +35,16 @@ function getDefaultTarget() {
 }
 
 class BackTop extends Component {
-  scrollEvent;
   constructor(props) {
     super(props)
+    this.handleScroll = this.handleScroll.bind(this)
+    this.scrollToTop = this.scrollToTop.bind(this)
     this.state = {
       visible: false,
     };
   }
 
-  scrollToTop = (e) => {
+  scrollToTop(e){
     const scrollTop = currentScrollTop();
     const startTime = Date.now();
     const frameFunc = () => {
@@ -67,9 +69,10 @@ class BackTop extends Component {
     }
   }
 
-  handleScroll = () => {
+  handleScroll(){
     const {visibilityHeight, target = getDefaultTarget} = this.props;
     const scrollTop = getScroll(target(), true);
+    console.log(scrollTop)
     this.setState({
       visible: scrollTop > visibilityHeight,
     });
