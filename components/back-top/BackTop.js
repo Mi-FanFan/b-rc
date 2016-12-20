@@ -63,7 +63,7 @@ class BackTop extends Component {
       document.body.scrollTop = value;
       document.documentElement.scrollTop = value;
     } else {
-      (targetNode as HTMLElement).scrollTop = value;
+      targetNode.scrollTop = value;
     }
   }
 
