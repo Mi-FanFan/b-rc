@@ -1,73 +1,36 @@
 /**
  * Created by Freeman on 2016/12/20.
  */
+import "babel-polyfill";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "babel-polyfill";
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Router, Route, IndexRoute,browserHistory} from 'react-router';
 import '../lib/b-rc.min.css'
-import {BackTop} from '../components/'
+import Home from './pages/Home'
+import BackTopPage from './pages/BackTopPage'
+
 class App extends React.Component {
+  static propTypes = {
+    children: React.PropTypes.node,
+    location: React.PropTypes.object
+  }
+
   render() {
+    const {children} = this.props;
     return (
-        <div>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <h1>测试</h1>
-          <BackTop/>
-        </div>
+      <div>
+        {children}
+      </div>
     );
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('container'));
+ReactDOM.render((
+  <Router history={browserHistory}>
+        <Route path="/" component={App}>
+              <IndexRoute component={Home}/>
+              <Route path="backtop" component={BackTopPage}/>
+        </Route>
+  </Router>
+), document.getElementById('container'));

@@ -40,7 +40,7 @@ module.exports = {
     new webpack.DefinePlugin({
       DEBUG: process.env.NODE_ENV !== 'production'
     }),
-    new ExtractTextPlugin('b-rc.min.css'),
+    new ExtractTextPlugin('app.css'),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'example/index.html')
     }),
