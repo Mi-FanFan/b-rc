@@ -2,4 +2,8 @@
  * Created by Freeman on 2016/12/20.
  * Tabs for react
  */
-export Tabs from './Tabs';
+import Tabs from './Tabs';
+import TabPane from './TabPane';
+export {TabPane};
+export default  Tabs;
+

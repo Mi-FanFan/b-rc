@@ -9,6 +9,7 @@ import { Router, Route, IndexRoute,browserHistory} from 'react-router';
 import '../lib/b-rc.min.css'
 import Home from './pages/Home'
 import BackTopPage from './pages/BackTopPage'
+import TabsPage from './pages/TabsPage'
 
 class App extends React.Component {
   static propTypes = {
@@ -31,6 +32,7 @@ ReactDOM.render((
         <Route path="/" component={App}>
               <IndexRoute component={Home}/>
               <Route path="backtop" component={BackTopPage}/>
+              <Route path="tabs" component={TabsPage}/>
         </Route>
   </Router>
 ), document.getElementById('container'));

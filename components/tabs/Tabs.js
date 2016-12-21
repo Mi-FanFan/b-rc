@@ -3,17 +3,62 @@
  */
 import React, {Component, PropTypes} from 'react'
 import classNames from 'classnames'
+import ScrollableTabBar from './ScrollableTabBar'
+import TabContent from './TabContent'
+
+function getDefaultActiveKey(props) {
+  let activeKey;
+  React.Children.forEach(props.children, child => {
+    if (child && !activeKey && !child.props.disabled) {
+      activeKey = child.key
+    }
+  })
+}
+
 class Tabs extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.setActiveKey = this.setActiveKey.bind(this);
+    this.handleTabClick = this.handleTabClick.bind(this);
+    this.getInitState = this.getInitState.bind(this);
+    this.state = {
+      activeKey: this.getInitState(props)
+    }
+  }
+
+  getInitState(props) {
+    let activeKey;
+    if ('activeKey' in props) {
+      activeKey = props.activeKey
+    } else if ('defaultActiveKey' in props) {
+      activeKey = props.defaultActiveKey;
+    } else {
+      activeKey = getDefaultActiveKey(props);
+    }
+    return activeKey;
+  }
+
+  setActiveKey(activeKey) {
+    if (this.state.activeKey !== activeKey) {
+      if (!('activeKey' in this.props)) {
+        this.setState({
+          activeKey
+        })
+      }
+    }
+  }
+
+  handleTabClick(activeKey) {
+    this.setActiveKey(activeKey)
   }
 
   render() {
     const {
-        prefixCls,
-        tabBarPosition,
-        className,
-        style,
+      prefixCls,
+      tabBarPosition,
+      className,
+      style,
+      children
     }  = this.props;
     const cls = classNames({
       [prefixCls]: 1,
@@ -24,10 +69,20 @@ class Tabs extends Component {
 
     return (
       <div
-          className={cls}
-          style={style}
+        className={cls}
+        style={style}
       >
-        this is unfinished tabs demo
+        <ScrollableTabBar
+          activeKey={this.state.activeKey}
+          panels={children}
+          key="tabBar"
+          onTabClick={this.handleTabClick}
+        />
+        <TabContent
+        key="tabContent"
+        activeKey={this.state.activeKey}
+        children={children}
+        />
       </div>
     )
   }
@@ -43,7 +98,6 @@ Tabs.propTypes = {
 Tabs.defaultProps = {
   prefixCls: 'mi-tabs',
   destroyInactiveTabPane: false,
-  onChange: noop,
   tabBarPosition: 'top',
   style: {},
 }

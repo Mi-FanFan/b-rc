@@ -5,6 +5,7 @@ class Home extends Component {
     return (
       <div>
         <Link to={'backtop'} >BackTop</Link>
+        <Link to={'tabs'} >Tabs</Link>
       </div>
     );
   }
