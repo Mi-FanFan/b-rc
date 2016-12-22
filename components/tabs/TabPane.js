@@ -10,10 +10,11 @@ class TabPane extends Component {
 
   render() {
     const {active,className,style,children} = this.props;
-    const prefixCls = `${this.props.rootPrefixCls}-tabpanel`;
+    const prefixCls = `${this.props.rootPrefixCls}-tabpane`;
     const cls = classNames({
       [prefixCls]:1,
       [`${prefixCls}-inactive`]:!active,
+      [`${prefixCls}-active`]:active,
       [className]:className,
     })
     return (

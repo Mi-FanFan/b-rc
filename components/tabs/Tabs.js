@@ -13,6 +13,7 @@ function getDefaultActiveKey(props) {
       activeKey = child.key
     }
   })
+  return activeKey;
 }
 
 class Tabs extends Component {
@@ -42,7 +43,7 @@ class Tabs extends Component {
     if (this.state.activeKey !== activeKey) {
       if (!('activeKey' in this.props)) {
         this.setState({
-          activeKey
+          activeKey:activeKey
         })
       }
     }
@@ -73,6 +74,7 @@ class Tabs extends Component {
         style={style}
       >
         <ScrollableTabBar
+          prefixCls={prefixCls}
           activeKey={this.state.activeKey}
           panels={children}
           key="tabBar"
@@ -82,6 +84,7 @@ class Tabs extends Component {
         key="tabContent"
         activeKey={this.state.activeKey}
         children={children}
+        prefixCls={prefixCls}
         />
       </div>
     )
