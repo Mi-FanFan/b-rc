@@ -1,8 +1,9 @@
 /**
- * Created by Freeman on 2016/12/22.
+ * Created by Freeman on 2016/12/21.
  */
-import React, {Component, PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react'
 import classNames from 'classnames';
+
 import {setTransform, isTransformSupported, getScroll} from './utils'
 
 function offset(elem) {
@@ -61,21 +62,30 @@ function componentDidUpdate(component, init = false) {
   inkBarNodeStyle.display = activeTab ? 'block' : 'none';
 
 }
-class InkTabBar extends Component {
+
+
+class TabBar extends Component {
   constructor(props) {
     super(props)
+    this.getTabs = this.getTabs.bind(this)
+    this.getInkBarNode = this.getInkBarNode.bind(this)
+    this.onTabClick = this.onTabClick.bind(this)
   }
 
   componentDidMount() {
-      componentDidUpdate(this,true)
+    componentDidUpdate(this,true)
   }
 
   componentDidUpdate() {
     componentDidUpdate(this)
   }
 
-  render() {
-    const {prefixCls, styles, inkBarAnimated} = this.props;
+  onTabClick(key) {
+    const {onTabClick} = this.props;
+    onTabClick(key)
+  }
+  getInkBarNode(){
+    const {prefixCls, style, inkBarAnimated} = this.props;
     const className = `${prefixCls}-ink-bar`;
     const classes = classNames({
       [className]: true,
@@ -87,7 +97,7 @@ class InkTabBar extends Component {
     })
     return (
       <div
-        style={styles.inkBar}
+        style={style.inkBar}
         className={classes}
         key="inkBar"
         ref="inkBar"
@@ -95,14 +105,80 @@ class InkTabBar extends Component {
       </div>
     )
   }
+  getTabs() {
+    const {panels, activeKey, prefixCls} = this.props;
+    const rst = [];
+    React.Children.forEach(panels, child => {
+      if (!child) {
+        return;
+      }
+      const key = child.key;
+      let cls = activeKey === key ? `${prefixCls}-tab-active` : '';
+      cls += ` ${prefixCls}-tab`
+      let events = {};
+      if (child.props.disabled) {
+        cls += ` ${prefixCls}-tab-disabled`;
+      } else {
+        events = {
+          onClick: () => this.onTabClick(key)
+        };
+      }
+      const ref = {};
+      if (activeKey === key) {
+        ref.ref = 'activeTab';
+      }
+
+      rst.push(
+        <div
+          role="tab"
+          aria-disabled={child.props.disabled ? 'true' : 'false'}
+          aria-selected={activeKey === key ? 'true' : 'false'}
+          {...events}
+          className={cls}
+          key={key}
+          {...ref}
+        >
+          {child.props.tab}
+        </div>
+      )
+    });
+
+    return rst;
+  }
+
+  render() {
+    const {style, prefixCls, className} = this.props;
+
+    const cls = classNames({
+      [`${prefixCls}-bar`]: true,
+      [className]: !!className
+    })
+    return (
+      <div
+        role="tablist"
+        className={cls}
+        ref="root"
+        style={style}
+        tabIndex="0"
+      >
+        {this.getInkBarNode()}
+        {this.getTabs()}
+      </div>
+    )
+  }
 }
-InkTabBar.propTypes = {
+TabBar.propTypes = {
   prefixCls: PropTypes.string,
-  styles: PropTypes.any,
-  inkBarAnimated: PropTypes.bool,
+  onTabClick: PropTypes.func.isRequired,
+  activeKey: PropTypes.string,
+  panels: PropTypes.any,
+  style: PropTypes.any,
+  inkBarAnimated:PropTypes.bool
 }
 
-InkTabBar.defaultProps = {
-  inkBarAnimated: true
+TabBar.defaultProps = {
+  style: {},
+  inkBarAnimated:true
 }
-export default InkTabBar
+
+export default TabBar
