@@ -2,12 +2,21 @@ import classnames from 'classnames';
 import {setTransform, isTransformSupported} from './utils';
 import React, {Component} from 'react';
 import TabBar from './TabBar'
-function scrollableEnhance() {
-  return Comp => {
+function scrollableEnhance(Comp) {
     return class Scrollable extends Component {
 
       constructor(props) {
         super(props)
+        this.prev = this.prev.bind(this)
+        this.next = this.next.bind(this)
+        this.setNextPrev = this.setNextPrev.bind(this)
+        this.getOffsetWH = this.getOffsetWH.bind(this)
+        this.getOffsetLT = this.getOffsetLT.bind(this)
+        this.setOffset = this.setOffset.bind(this)
+        this.setPrev = this.setPrev.bind(this)
+        this.setNext = this.setNext.bind(this)
+        this.scrollToActiveTab = this.scrollToActiveTab.bind(this)
+
         this.offset = 0;
         this.state = {
           next: false,
@@ -257,7 +266,6 @@ function scrollableEnhance() {
         );
       }
     };
-  }
 }
 
-export default scrollableEnhance()(TabBar)
+export default scrollableEnhance(TabBar)

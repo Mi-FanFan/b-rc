@@ -3,7 +3,7 @@
  */
 import React, {Component, PropTypes} from 'react'
 import classNames from 'classnames'
-import ScrollableTabBar from './ScrollableTabBar'
+import RootNodeTabBar from './RootNodeTabBar'
 import TabContent from './TabContent'
 
 function getDefaultActiveKey(props) {
@@ -73,7 +73,7 @@ class Tabs extends Component {
         className={cls}
         style={style}
       >
-        <ScrollableTabBar
+        <RootNodeTabBar
           prefixCls={prefixCls}
           activeKey={this.state.activeKey}
           panels={children}
