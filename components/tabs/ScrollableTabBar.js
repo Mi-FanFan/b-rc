@@ -2,7 +2,8 @@ import classnames from 'classnames';
 import {setTransform, isTransformSupported} from './utils';
 import React, {Component} from 'react';
 import TabBar from './TabBar'
-function scrollableEnhance(Comp) {
+function scrollableEnhance() {
+  return Comp => {
     return class Scrollable extends Component {
 
       constructor(props) {
@@ -16,6 +17,7 @@ function scrollableEnhance(Comp) {
         this.setPrev = this.setPrev.bind(this)
         this.setNext = this.setNext.bind(this)
         this.scrollToActiveTab = this.scrollToActiveTab.bind(this)
+        this.isNextPrevShown = this.isNextPrevShown.bind(this)
 
         this.offset = 0;
         this.state = {
@@ -208,27 +210,27 @@ function scrollableEnhance(Comp) {
 
         if (showNextPrev) {
           prevButton = (
-            <span
-              onClick={prev ? this.prev : null}
-              unselectable="unselectable"
-              className={classnames({
-                [`${prefixCls}-tab-prev`]: 1,
-                [`${prefixCls}-tab-btn-disabled`]: !prev,
-              })}
-            >
+              <span
+                  onClick={prev ? this.prev : null}
+                  unselectable="unselectable"
+                  className={classnames({
+                    [`${prefixCls}-tab-prev`]: 1,
+                    [`${prefixCls}-tab-btn-disabled`]: !prev,
+                  })}
+              >
         <span className={`${prefixCls}-tab-prev-icon`}/>
       </span>
           );
 
           nextButton = (
-            <span
-              onClick={next ? this.next : null}
-              unselectable="unselectable"
-              className={classnames({
-                [`${prefixCls}-tab-next`]: 1,
-                [`${prefixCls}-tab-btn-disabled`]: !next,
-              })}
-            >
+              <span
+                  onClick={next ? this.next : null}
+                  unselectable="unselectable"
+                  className={classnames({
+                    [`${prefixCls}-tab-next`]: 1,
+                    [`${prefixCls}-tab-btn-disabled`]: !next,
+                  })}
+              >
         <span className={`${prefixCls}-tab-next-icon`}/>
       </span>
           );
@@ -238,34 +240,35 @@ function scrollableEnhance(Comp) {
         const navClasses = classnames({
           [navClassName]: true,
           [
-            scrollAnimated ?
-              `${navClassName}-animated` :
-              `${navClassName}-no-animated`
-            ]: true,
+              scrollAnimated ?
+                  `${navClassName}-animated` :
+                  `${navClassName}-no-animated`
+              ]: true,
         });
 
         return (
-          <div
-            className={classnames({
-              [`${prefixCls}-nav-container`]: 1,
-              [`${prefixCls}-nav-container-scrolling`]: showNextPrev,
-            })}
-            key="container"
-            ref="container"
-          >
-            {prevButton}
-            {nextButton}
-            <div className={`${prefixCls}-nav-wrap`} ref="navWrap">
-              <div className={`${prefixCls}-nav-scroll`}>
-                <div className={navClasses} ref="nav">
-                  <Comp {...this.props} />
+            <div
+                className={classnames({
+                  [`${prefixCls}-nav-container`]: 1,
+                  [`${prefixCls}-nav-container-scrolling`]: showNextPrev,
+                })}
+                key="container"
+                ref="container"
+            >
+              {prevButton}
+              {nextButton}
+              <div className={`${prefixCls}-nav-wrap`} ref="navWrap">
+                <div className={`${prefixCls}-nav-scroll`}>
+                  <div className={navClasses} ref="nav">
+                    <Comp {...this.props} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         );
       }
     };
+  }
 }
 
-export default scrollableEnhance(TabBar)
+export default scrollableEnhance()(TabBar)
