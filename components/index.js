@@ -3,7 +3,9 @@
  */
 
 import BackTop from './back-top';
+import Tabs from './tabs';
 
 export default {
-  BackTop
+  BackTop,
+  Tabs
 };

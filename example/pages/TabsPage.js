@@ -2,7 +2,7 @@
  * Created by Freeman on 2016/12/21.
  */
 import React, {Component, PropTypes} from 'react'
-import Tabs, {TabPane} from '../../components/tabs'
+import Tabs, {TabPane} from '../../lib/tabs'
 class TabsPage extends Component {
   constructor(props) {
     super(props)
