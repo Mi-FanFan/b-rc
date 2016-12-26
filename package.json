@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --hot --inline --compress --colors --port 8081",
     "clean": "rimraf ./lib",
-    "build:less": "gulp --gulpfile gulp.js",
+    "build:less": "gulp",
     "build": "npm run clean &  babel ./components --out-dir ./lib --copy-files && npm run build:less"
   },
   "repository": {
