@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BackTop} from '../../components/'
+import {BackTop} from '../../components'
 class BackTopPage extends Component {
   render() {
     return (

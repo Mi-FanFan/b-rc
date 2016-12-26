@@ -12,15 +12,3 @@ export const isTransformSupported = (style) => (
   'webkitTransform' in style ||
   'mozTransform' in style
 )
-
-export const getScroll = (w,top) =>{
-  let ret = w[`page${top? 'Y':'X'}Offset`];
-  const method = `scroll${top?'Top':'Left'}`;
-  if (typeof ret !== 'number'){
-    ret = d.documentElement[method];
-    if (typeof ret !== 'number'){
-      ret = d.body[method];
-    }
-  }
-  return ret;
-}
