@@ -2,10 +2,5 @@
  * Created by Freeman on 2016/12/20.
  */
 
-import BackTop from './back-top';
-import Tabs from './tabs';
-
-export default {
-  BackTop,
-  Tabs
-};
+export {default as BackTop} from './back-top'
+export {default as Tabs} from './tabs'

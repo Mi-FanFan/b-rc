@@ -2,7 +2,8 @@
  * Created by Freeman on 2016/12/21.
  */
 import React, {Component, PropTypes} from 'react'
-import Tabs, {TabPane} from '../../lib/tabs'
+import {Tabs} from '../../lib'
+const TabPane = Tabs.TabPane;
 class TabsPage extends Component {
   constructor(props) {
     super(props)

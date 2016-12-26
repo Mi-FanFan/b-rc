@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --hot --inline --progress --colors --port 8081",
     "clean": "rimraf ./lib",
-    "build:less": "find lib/ -maxdepth 2 -name 'index.less' -exec lessc --clean-css='--compatibility=ie8 --advanced' {} \\; > ./lib/b-rc.min.css",
+    "build:less": "lessc ./components/style/index.less --clean-css='--compatibility=ie8 --advanced' ./lib/b-rc.min.css",
     "build": "npm run clean &  babel ./components --out-dir ./lib --copy-files && npm run build:less"
   },
   "repository": {
