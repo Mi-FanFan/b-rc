@@ -4,21 +4,21 @@
   "description": "react components for budee front-end project",
   "main": "./lib",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --progress --colors --port 8081",
+    "start": "webpack-dev-server --hot --inline --compress --colors --port 8081",
     "clean": "rimraf ./lib",
-    "build:less": "lessc ./components/style/index.less --clean-css='--compatibility=ie8 --advanced' ./lib/b-rc.min.css",
+    "build:less": "gulp --gulpfile gulp.js",
     "build": "npm run clean &  babel ./components --out-dir ./lib --copy-files && npm run build:less"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zidaneaa/b-rc.git"
+    "url": "git+https://github.com/Mi-FanFan/b-rc.git"
   },
-  "homepage": "https://github.com/zidaneaa/b-rc",
+  "homepage": "https://github.com/Mi-FanFan/b-rc",
   "keywords": [
     "react",
     "component"
   ],
-  "author": "freeman007",
+  "author": "Mi-FanFan",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.18.0",
@@ -52,6 +52,11 @@
     "eslint-plugin-react": "*",
     "extract-text-webpack-plugin": "*",
     "file-loader": "*",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-less": "^3.3.0",
+    "gulp-rename": "^1.2.2",
     "html-webpack-plugin": "*",
     "ignore-styles": "*",
     "json-loader": "*",
