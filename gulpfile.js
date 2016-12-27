@@ -2,7 +2,7 @@
  * Created by Freeman on 2016/12/26.
  */
 var gulp = require('gulp');
-var cleanCSS = require('gulp-clean-css');
+//var cleanCSS = require('gulp-clean-css');
 var less = require('gulp-less');
 var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
@@ -14,7 +14,6 @@ gulp.task('css', function () {
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie > 8']
     }))
-    .pipe(cleanCSS())
     .pipe(rename('b-rc.css'))
     .pipe(gulp.dest('lib'));
 });
