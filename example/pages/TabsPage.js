@@ -1,15 +1,10 @@
 /**
  * Created by Freeman on 2016/12/21.
  */
-import React, {Component, PropTypes} from 'react'
-import {Tabs} from '../../lib'
+import React from 'react'
+import {Tabs} from '../../components'
 const TabPane = Tabs.TabPane;
-class TabsPage extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
+const TabsPage = () => {
     return (
       <div style={{width:'400px'}}>
         <Tabs>
@@ -26,7 +21,6 @@ class TabsPage extends Component {
         </Tabs>
       </div>
     )
-  }
 }
 
 export default TabsPage

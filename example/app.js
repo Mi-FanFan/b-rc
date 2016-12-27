@@ -4,9 +4,9 @@
 import "babel-polyfill";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+//import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Router, Route, IndexRoute,browserHistory} from 'react-router';
-import '../lib/b-rc.min.css'
+import '../components/style/index.less'
 import Home from './pages/Home'
 import BackTopPage from './pages/BackTopPage'
 import TabsPage from './pages/TabsPage'

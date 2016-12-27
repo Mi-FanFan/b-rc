@@ -21,7 +21,7 @@ With [npm](http://npmjs.com)
  import ReactDOM from 'react-dom';
  import "babel-polyfill";
  import 'b-rc/b-rc.min.css'
- import {BackTop} from 'b-rc/lib'
+ import {BackTop} from 'b-rc'
  class App extends React.Component {
    render() {
      return (
