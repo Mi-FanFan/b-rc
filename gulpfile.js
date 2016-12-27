@@ -15,7 +15,7 @@ gulp.task('css', function () {
       browsers: ['last 2 versions', 'ie > 8']
     }))
     .pipe(cleanCSS())
-    .pipe(rename('b-rc.min.css'))
+    .pipe(rename('b-rc.css'))
     .pipe(gulp.dest('lib'));
 });
 
