@@ -10,6 +10,7 @@ import '../components/style/index.less'
 import Home from './pages/Home'
 import BackTopPage from './pages/BackTopPage'
 import TabsPage from './pages/TabsPage'
+import ViewerPage from './pages/ViewerPage'
 
 class App extends React.Component {
   static propTypes = {
@@ -33,6 +34,7 @@ ReactDOM.render((
               <IndexRoute component={Home}/>
               <Route path="backtop" component={BackTopPage}/>
               <Route path="tabs" component={TabsPage}/>
+              <Route path="viewer" component={ViewerPage}/>
         </Route>
   </Router>
 ), document.getElementById('container'));
