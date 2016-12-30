@@ -18,6 +18,7 @@ class Viewer extends Component {
     this.state = {
       index: props.startIndex,
       showViewer: false,
+      dragging:false,
       startX: 0,
       startY: 0,
       endX: 0,
@@ -44,6 +45,7 @@ class Viewer extends Component {
       return
     }
     this.setState({
+      dragging:true,
       startX:e.touches[0].clientX,
       startY:e.touches[0].clientY,
     })
@@ -86,7 +88,8 @@ class Viewer extends Component {
       startY:0,
       endX:0,
       endY:0,
-      index:index
+      index:index,
+      dragging:false
     })
   }
 
@@ -99,10 +102,11 @@ class Viewer extends Component {
 
     const width = document.documentElement.clientWidth;
     const leftTranslate = -(this.state.index * width) +(this.state.endX -this.state.startX)
+    const durate = this.state.dragging? 0:.3;
     const imgListStyle = {
       width: width * data.length,
       transition: 'transform .3s ease-out',
-      WebkitTransition: 'transform .3s ease-out',
+      WebkitTransition: `transform ${durate}s ease-out`,
       transform: `translate3d(${leftTranslate}px,0px,0px)`
     };
     return (
