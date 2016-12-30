@@ -10,25 +10,28 @@
     overflow: hidden;
   }
   &-img-container {
-    padding: .2rem;
+    //padding: .2rem;
     height: 100%;
     width: 100%;
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
   }
   &-img-item {
+    width: 30%;
+    margin: 1.5%;
     text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    float: left;
-    width: 5.6rem;
-    height: 4.25rem;
-    line-height: 4.25rem;
-    margin: .2rem;
   }
 
   &-img-item img {
-    max-width: 5rem;
-    max-height: 4.25rem;
+    max-width: 90%;
+    max-height: 90%;
+
+    //max-height: 4.25rem;
   }
 
   &-overlay {
