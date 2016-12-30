@@ -10,10 +10,18 @@ class Viewer extends Component {
     super(props)
     this.handleItemClick = this.handleItemClick.bind(this)
     this.handleBack = this.handleBack.bind(this)
+    this.handleTouchStart = this.handleTouchStart.bind(this)
+    this.handleTouchMove = this.handleTouchMove.bind(this)
+    this.handleTouchEnd = this.handleTouchEnd.bind(this)
+    this.handleTouchCancel = this.handleTouchCancel.bind(this)
+
     this.state = {
       index: props.startIndex,
-      showViewer: false
-
+      showViewer: false,
+      startX: 0,
+      startY: 0,
+      endX: 0,
+      endY: 0
     }
   }
 
@@ -30,18 +38,80 @@ class Viewer extends Component {
     })
   }
 
+  handleTouchStart(e) {
+    e.preventDefault()
+    if (e.touches.length > 1) {
+      return
+    }
+    this.setState({
+      startX:e.touches[0].clientX,
+      startY:e.touches[0].clientY,
+    })
+    this.handleTouchMove(e)
+  }
+
+  handleTouchMove(e) {
+    e.preventDefault()
+    if (e.touches.length > 1) {
+      return
+    }
+    this.setState({
+      endX:e.touches[0].clientX,
+      endY:e.touches[0].clientY,
+    })
+  }
+
+  handleTouchEnd(e) {
+    e.preventDefault()
+    if (e.touches.length > 1) {
+      return
+    }
+    let diff  = 0
+    let distance = this.state.endX -this.state.startX
+    if (distance>0){
+      diff = -1
+    }else if (distance<0){
+      diff = 1
+    }
+
+     let index = this.state.index + diff
+    if (index === this.props.data.length){
+      index = this.props.data.length-1
+    }
+    if (index === -1){
+      index = 0
+    }
+    this.setState({
+      startX:0,
+      startY:0,
+      endX:0,
+      endY:0,
+      index:index
+    })
+  }
+
+  handleTouchCancel(e) {
+
+  }
+
   render() {
     const {prefixCls, data} = this.props;
 
-    const imgListStyle = {};
-
+    const width = document.documentElement.clientWidth;
+    const leftTranslate = -(this.state.index * width) +(this.state.endX -this.state.startX)
+    const imgListStyle = {
+      width: width * data.length,
+      transition: 'transform .3s ease-out',
+      WebkitTransition: 'transform .3s ease-out',
+      transform: `translate3d(${leftTranslate}px,0px,0px)`
+    };
     return (
       <div className="">
-        <div className={`${prefixCls}-img-list`}>
-          <ul className={`${prefixCls}-img-container`}>
+        <div className="mi-viewer-img-list">
+          <ul className="mi-viewer-img-container">
             {
               data.map((url, index) => (
-                <li key={index} className={`${prefixCls}-img-item`} onClick={() => this.handleItemClick(index)}>
+                <li key={index} className="mi-viewer-img-item" onClick={() => this.handleItemClick(index)}>
                   <img src={url} role="presentation"/>
                 </li>
               ))
@@ -65,12 +135,18 @@ class Viewer extends Component {
                   </div>
                 </div>
                 <div className="mi-viewer-view">
-                  <div className="mi-viewer-imgbox">
+                  <div className="mi-viewer-imgbox"
+                       ref="imgBox"
+                       onTouchStart={this.handleTouchStart}
+                       onTouchMove={this.handleTouchMove}
+                       onTouchEnd={this.handleTouchEnd}
+                       onTouchCancel={this.handleTouchCancel}
+                  >
                     <ul className="mi-viewer-imglist" style={imgListStyle}>
                       {
                         data.map((url, index) => (
-                          <li key={index}>
-                            <img src={url} role="presentation"/>
+                          <li key={index} style={{width: width}}>
+                            <img src={url} role="presentation" style={{width: width}}/>
                           </li>
                         ))
                       }
