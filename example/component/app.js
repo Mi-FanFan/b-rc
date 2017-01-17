@@ -1,9 +1,6 @@
 /**
  * Created by jf on 15/12/10.
  */
-
-"use strict";
-
 import React from 'react';
 import {Link} from 'react-router'
 import {Layout, Menu, Icon} from 'antd';

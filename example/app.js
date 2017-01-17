@@ -10,7 +10,9 @@ import Home from './pages/Home'
 import BackTopPage from './pages/BackTopPage'
 import TabsPage from './pages/TabsPage'
 import ToasterPage from './pages/ToasterPage'
+import ButtonPage from './pages/ButtonPage'
 import 'antd/dist/antd.css';
+import './component/app.less'
 import App from './component/app';
 
 ReactDOM.render((
@@ -20,6 +22,7 @@ ReactDOM.render((
         <Route path="backtop" component={BackTopPage}/>
         <Route path="tabs" component={TabsPage}/>
         <Route path="toaster" component={ToasterPage}/>
+        <Route path="button" component={ButtonPage}/>
       </Route>
     </Router>
 ), document.getElementById('container'));
