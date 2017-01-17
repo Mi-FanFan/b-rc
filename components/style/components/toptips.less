@@ -1,0 +1,33 @@
+@import "../themes/default";
+.mi-toptips {
+  display: none;
+  position: fixed;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  top: 10%;
+  left: 40%;
+  right: 40%;
+  width: 20%;
+  height: 40px;
+  border-radius: 4px;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  z-index: @zindex-notification;
+  word-wrap: break-word;
+  word-break: break-all;
+  transition: all @animation-duration-fast @ease-in-out;
+  &_default {
+    background-color: #B2B2B2;
+  }
+  &_info {
+    background-color: #586C94;
+  }
+  &_primary {
+    background-color: #1AAD19;
+  }
+  &_warn {
+    background-color: #E64340;
+  }
+}

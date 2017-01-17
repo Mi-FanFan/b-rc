@@ -5,12 +5,12 @@ import "babel-polyfill";
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { Router, Route, IndexRoute,browserHistory} from 'react-router';
+import { Router, Route, IndexRoute,hashHistory} from 'react-router';
 import '../components/style/index.less'
 import Home from './pages/Home'
 import BackTopPage from './pages/BackTopPage'
 import TabsPage from './pages/TabsPage'
-import ViewerPage from './pages/ViewerPage'
+import ToasterPage from './pages/ToasterPage'
 
 class App extends React.Component {
   static propTypes = {
@@ -29,12 +29,12 @@ class App extends React.Component {
 }
 
 ReactDOM.render((
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
         <Route path="/" component={App}>
               <IndexRoute component={Home}/>
               <Route path="backtop" component={BackTopPage}/>
               <Route path="tabs" component={TabsPage}/>
-              <Route path="viewer" component={ViewerPage}/>
+              <Route path="toaster" component={ToasterPage}/>
         </Route>
   </Router>
 ), document.getElementById('container'));

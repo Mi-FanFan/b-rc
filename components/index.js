@@ -4,4 +4,4 @@
 
 export {default as BackTop} from './back-top'
 export {default as Tabs} from './tabs'
-export {default as Viewer} from './viewer';
+export {default as Toaster} from './toaster';
