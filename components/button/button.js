@@ -13,30 +13,12 @@ import {findDOMNode} from 'react-dom';
 import Icon from '../icon';
 
 export default class Button extends React.Component {
-  constructor() {
-    super(...arguments);
-    this.clearButton = (button) => {
-      button.className = button.className.replace(` ${this.props.prefixCls}-clicked`, '');
-    };
-    this.handleClick = (e) => {
-      // Add click effect
-      const buttonNode = findDOMNode(this);
-      this.clearButton(buttonNode);
-      this.clickedTimeout = setTimeout(() => buttonNode.className += ` ${this.props.prefixCls}-clicked`, 10);
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => this.clearButton(buttonNode), 500);
-      const onClick = this.props.onClick;
-      if (onClick) {
-        onClick(e);
-      }
-    };
+  constructor(props) {
+    super(props);
+    this.clearButton = this.clearButton.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     // Handle auto focus when click button in Chrome
-    this.handleMouseUp = (e) => {
-      findDOMNode(this).blur();
-      if (this.props.onMouseUp) {
-        this.props.onMouseUp(e);
-      }
-    };
+    this.handleMouseUp = this.handleMouseUp.bind(this);
   }
 
   componentWillUnmount() {
@@ -48,6 +30,27 @@ export default class Button extends React.Component {
     }
   }
 
+  clearButton(button) {
+    button.className = button.className.replace(` ${this.props.prefixCls}-clicked`, '');
+  }
+  handleClick(e){
+    // Add click effect
+    const buttonNode = findDOMNode(this);
+    this.clearButton(buttonNode);
+    this.clickedTimeout = setTimeout(() => buttonNode.className += ` ${this.props.prefixCls}-clicked`, 10);
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => this.clearButton(buttonNode), 500);
+    const {onClick} = this.props;
+    if (onClick) {
+      onClick(e);
+    }
+  }
+  handleMouseUp(e){
+    findDOMNode(this).blur();
+    if (this.props.onMouseUp) {
+      this.props.onMouseUp(e);
+    }
+  }
   render() {
     const props = this.props;
     const {type, shape, size = '', className, htmlType, children, icon, loading, prefixCls} = props,
