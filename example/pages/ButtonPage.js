@@ -2,7 +2,8 @@
  * Created by Freeman on 2016/12/21.
  */
 import React from 'react'
-import {Button} from '../../components'
+import Button from '../../components/button'
+import '../../components/button/style'
 
 const ButtonPage = () => {
     return (

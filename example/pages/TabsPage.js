@@ -2,7 +2,8 @@
  * Created by Freeman on 2016/12/21.
  */
 import React from 'react'
-import {Tabs} from '../../components'
+import Tabs from '../../components/tabs'
+import '../../components/tabs/style'
 const TabPane = Tabs.TabPane;
 const TabsPage = () => {
     return (

@@ -2,7 +2,10 @@
  * Created by Freeman on 2016/12/21.
  */
 import React from 'react'
-import {Toaster} from '../../components'
+import Toaster from '../../components/toaster'
+import Button from '../../components/button'
+import '../../components/toaster/style'
+import '../../components/button/style'
 
 export default class ToasterDemo extends React.Component {
 
@@ -37,10 +40,10 @@ export default class ToasterDemo extends React.Component {
   render() {
     return (
         <div className="toaster">
-          <button onClick={()=>this.handle('default','Warn Toptip')} >Default Toptip</button>
-          <button onClick={()=>this.handle('primary','Primary Toptip')} >Primary Toptip</button>
-          <button onClick={()=>this.handle('info','Info Toptip')} >Info Toptip</button>
-          <button onClick={()=>this.handle('warn','Warn Toptip')} >Warn Toptip</button>
+          <Button type="primary" onClick={()=>this.handle('default','Warn Toptip')} >Default Toptip</Button>
+          <Button onClick={()=>this.handle('primary','Primary Toptip')} >Primary Toptip</Button>
+          <Button onClick={()=>this.handle('info','Info Toptip')} >Info Toptip</Button>
+          <Button onClick={()=>this.handle('warn','Warn Toptip')} >Warn Toptip</Button>
           <Toaster msg={this.state.msg} hideCallBack={this.handleHide}/>
         </div>
     );

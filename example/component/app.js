@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {Link} from 'react-router'
-import {Layout, Menu, Icon} from 'antd';
+import {Layout, Menu, Icon,Row,Col} from 'antd';
 const SubMenu = Menu.SubMenu;
 const {Header, Content, Footer, Sider} = Layout
 
@@ -12,7 +12,31 @@ export default class App extends React.Component {
     const {children} = this.props
     return (
         <Layout>
-          <Header />
+          <Header id="header" >
+            <Row gutter={16}>
+              <Col span={6} >
+                <Link id="logo" href="/index-cn">
+                  <img alt="logo" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg"/>
+                    <span>Ant Design</span>
+                </Link>
+              </Col>
+              <Col span={8}/>
+              <Col span={6} >
+                <Menu id="nav" mode="horizontal" theme="light"
+                      defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']}>
+                    <Menu.Item key="1">
+                      <Link to={'/'}>首页</Link>
+                    </Menu.Item>
+                    <Menu.Item key="2">
+                      <Link to={'spec'}>规范</Link>
+                    </Menu.Item>
+                    <Menu.Item key="3">
+                      <Link to={'components'}>组件</Link>
+                    </Menu.Item>
+                </Menu>
+              </Col>
+            </Row>
+          </Header>
           <Layout >
             <Sider>
               <div className="ant-layout-logo"></div>
