@@ -36,8 +36,11 @@ module.exports = {
         test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          cacheDirectory: true,
+        query: {
+          plugins: [
+            ['import', [{libraryName: "antd", style: true}]],
+          ],
+          cacheDirectory: true
         }
       },
       {
