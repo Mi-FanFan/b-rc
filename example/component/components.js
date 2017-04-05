@@ -35,6 +35,9 @@ export default class App extends React.Component {
               <Menu.Item key="7">
                 <Link to={'components/loading'}>Loading</Link>
               </Menu.Item>
+              <Menu.Item key="8">
+                <Link to={'components/modal'}>Modal</Link>
+              </Menu.Item>
             </SubMenu>
             <SubMenu key="sub3" title={<span><Icon type="notification"/>Feedback</span>}>
               <Menu.Item key="9">
