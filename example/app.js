@@ -11,6 +11,7 @@ import TabsPage from './pages/TabsPage'
 import ToasterPage from './pages/ToasterPage'
 import ButtonPage from './pages/ButtonPage'
 import Typography from './pages/Typography'
+import LoadingPage from './pages/LoadingPage'
 import NouFound from './pages/NouFound'
 import './component/app.less'
 import App from './component/app'
@@ -26,6 +27,7 @@ ReactDOM.render((
       </Route>
       <Route path="components" component={ComponentsContainer}>
         <Route path="backtop" component={BackTopPage}/>
+        <Route path="loading" component={LoadingPage}/>
         <Route path="tabs" component={TabsPage}/>
         <Route path="toaster" component={ToasterPage}/>
         <Route path="button" component={ButtonPage}/>

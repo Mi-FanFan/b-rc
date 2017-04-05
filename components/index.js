@@ -11,3 +11,4 @@ export {default as Tabs} from './tabs'
 
 //feedback
 export {default as Toaster} from './toaster';
+export {default as Loading} from './loading'

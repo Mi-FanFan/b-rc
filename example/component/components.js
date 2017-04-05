@@ -27,10 +27,13 @@ export default class App extends React.Component {
             </SubMenu>
             <SubMenu key="sub2" title={<span><Icon type="laptop"/>Navigation</span>}>
               <Menu.Item key="5">
-                <Link to={'components/backtop'}>BackTop</Link>
-              </Menu.Item>
+              <Link to={'components/backtop'}>BackTop</Link>
+            </Menu.Item>
               <Menu.Item key="6">
                 <Link to={'components/tabs'}>Tabs</Link>
+              </Menu.Item>
+              <Menu.Item key="7">
+                <Link to={'components/loading'}>Loading</Link>
               </Menu.Item>
             </SubMenu>
             <SubMenu key="sub3" title={<span><Icon type="notification"/>Feedback</span>}>
