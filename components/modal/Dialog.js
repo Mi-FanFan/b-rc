@@ -3,7 +3,6 @@
  */
 import React, { Component, PropTypes } from 'react'
 import Animate from 'rc-animate'
-import classNames from 'classnames'
 import LazyRenderBox from './LazyRenderBox'
 let uuid = 0
 class Dialog extends Component {
