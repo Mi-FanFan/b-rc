@@ -6,6 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "bisheng": "bisheng start",
+    "site": "bisheng build ",
+    "deploy": "npm run site && bisheng gh-pages --push-only",
     "clean": "rimraf ./lib",
     "build": "npm run clean &  babel ./components --out-dir ./lib --copy-files",
     "pre-publish": "npm run build"
