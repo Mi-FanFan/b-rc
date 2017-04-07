@@ -19,6 +19,13 @@ module.exports = {
       'b-rc': path.join(process.cwd(), 'lib'),
       'react-router': 'react-router/umd/ReactRouter'
     };
+    config.babel.plugins.push([
+      require.resolve('babel-plugin-import'),
+      {
+        style: true,
+        libraryName: 'antd',
+      },
+    ]);
     return config;
   },
   root: '/b-rc/'

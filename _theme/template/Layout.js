@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 require('../static/style');
-require('antd/dist/antd.css');
+//require('antd/dist/antd.css');
 
 function isExternalLink(link) {
   const host = document.location.host;

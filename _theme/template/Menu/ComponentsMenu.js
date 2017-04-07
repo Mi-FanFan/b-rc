@@ -7,6 +7,8 @@ const MenuItemGroup = Menu.ItemGroup;
 
 const componentOrder = [
   'Components',
+  'General',
+  'Feedback',
   '地图',
   '覆盖物',
   '信息窗体'
