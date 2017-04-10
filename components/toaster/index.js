@@ -1,7 +1,8 @@
 /**
  * Created by Freeman on 2017/1/17.
  */
-import React, {Component, PropTypes} from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TopTips from './TopTips'
 class Toaster extends Component {
   constructor(props) {

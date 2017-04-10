@@ -1,7 +1,8 @@
 /**
  * Created by Freeman on 2017/4/5.
  */
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Animate from 'rc-animate'
 import LazyRenderBox from './LazyRenderBox'
 let uuid = 0

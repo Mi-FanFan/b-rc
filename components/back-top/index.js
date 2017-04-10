@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Animate from 'rc-animate';
 import addEventListener from 'rc-util/lib/Dom/addEventListener';
 import classNames from 'classnames';
@@ -100,9 +101,9 @@ export default class BackTop extends React.Component {
 }
 
 BackTop.propTypes = {
-  visibilityHeight: React.PropTypes.number,
-  onClick: React.PropTypes.func,
-  target: React.PropTypes.any,
+  visibilityHeight: PropTypes.number,
+  onClick: PropTypes.func,
+  target: PropTypes.any,
 }
 
 BackTop.defaultProps = {

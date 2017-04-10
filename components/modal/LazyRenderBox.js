@@ -1,7 +1,8 @@
 /**
  * Created by Freeman on 2017/4/5.
  */
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import assign from 'object-assign'
 class LazyRenderBox extends Component {
 

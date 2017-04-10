@@ -1,7 +1,8 @@
 /**
  * Created by Freeman on 2016/12/20.
  */
-import React, {Component, PropTypes} from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames'
 import RootNodeTabBar from './RootNodeTabBar'
 import TabContent from './TabContent'

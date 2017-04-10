@@ -1,5 +1,6 @@
-import { PropTypes } from 'react'
+import 'react';
 import React from 'react'
+import PropTypes from 'prop-types';
 import Button from '../button'
 import Dialog from './Dialog'
 

@@ -1,7 +1,8 @@
 /**
  * Created by Freeman on 2016/12/21.
  */
-import React, {Component, PropTypes} from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames'
 class TabPane extends Component {
   constructor(props) {

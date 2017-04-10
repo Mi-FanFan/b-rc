@@ -8,6 +8,7 @@ var __rest = (this && this.__rest) || function (s, e) {
       return t;
     };
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {findDOMNode} from 'react-dom';
 import Icon from '../icon';
@@ -91,12 +92,12 @@ Button.defaultProps = {
   loading: false,
 };
 Button.propTypes = {
-  type: React.PropTypes.string,
-  shape: React.PropTypes.oneOf(['circle', 'circle-outline']),
-  size: React.PropTypes.oneOf(['large', 'default', 'small']),
-  htmlType: React.PropTypes.oneOf(['submit', 'button', 'reset']),
-  onClick: React.PropTypes.func,
-  loading: React.PropTypes.bool,
-  className: React.PropTypes.string,
-  icon: React.PropTypes.string,
+  type: PropTypes.string,
+  shape: PropTypes.oneOf(['circle', 'circle-outline']),
+  size: PropTypes.oneOf(['large', 'default', 'small']),
+  htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
+  onClick: PropTypes.func,
+  loading: PropTypes.bool,
+  className: PropTypes.string,
+  icon: PropTypes.string,
 };
