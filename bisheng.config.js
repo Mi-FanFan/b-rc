@@ -16,15 +16,19 @@ module.exports = {
   port: 9001,
   webpackConfig(config) {
     config.resolve.alias = {
-      'b-rc': path.join(process.cwd(), 'lib'),
+      'b-rc/lib': path.join(process.cwd(), 'components'),
       'react-router': 'react-router/umd/ReactRouter'
     };
     config.babel.plugins.push([
-      require.resolve('babel-plugin-import'),
+      require.resolve('babel-plugin-import'),[
+      {
+        style: true,
+        libraryName: 'b-rc',
+      },
       {
         style: true,
         libraryName: 'antd',
-      },
+      }]
     ]);
     return config;
   },

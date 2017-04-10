@@ -5,7 +5,7 @@ title: 基本
 
 
 ````jsx
-import { Modal, Button } from 'antd';
+import { Modal, Button } from 'b-rc';
 
 const App = React.createClass({
   getInitialState() {

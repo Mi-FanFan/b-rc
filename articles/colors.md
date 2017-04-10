@@ -22,11 +22,7 @@ b-rc 的色板由 8 种基本色彩组成，每种基本色（第 6 格）又按
 
 > 注：在由浅至深的色板里，第 6 格色彩单元格普遍满足 [WCAG 2.0](http://leaverou.github.io/contrast-ratio/) 的 4.5:1 最小对比度（AA 级），我们将其定义为色板的默认品牌色。
 
-`````__react
-import ColorPalettes from '../../site/theme/template/Color/ColorPalettes';
 
-ReactDOM.render(<ColorPalettes />, mountNode);
-`````
 
 为了考虑文本在不同颜色背景下的呈现，我们选择了『White #FFFFFF』和『Black #000000』并配以透明度来区分文本的等级层次。详情请查看 [字体颜色](/docs/spec/font-cn#字体颜色)。
 
@@ -34,11 +30,7 @@ ReactDOM.render(<ColorPalettes />, mountNode);
 
 如果上面的色板不能满足你的需求，你可以选择一个主色，b-rc 的色彩生成算法会为你生成完整的色板。
 
-`````__react
-import ColorPaletteTool from '../../site/theme/template/Color/ColorPaletteTool';
 
-ReactDOM.render(<ColorPaletteTool />, mountNode);
-`````
 
 ---
 

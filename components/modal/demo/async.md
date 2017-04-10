@@ -5,7 +5,7 @@ title: 异步关闭
 
 
 ````jsx
-import { Modal, Button } from 'antd';
+import { Modal, Button } from 'b-rc';
 
 const Test = React.createClass({
   getInitialState() {
