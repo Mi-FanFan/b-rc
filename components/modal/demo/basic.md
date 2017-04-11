@@ -7,27 +7,31 @@ title: 基本
 ````jsx
 import { Modal, Button } from 'b-rc';
 
-const App = React.createClass({
-  getInitialState() {
-    return { visible: false };
-  },
+class App extends React.Component{
+  constructor(props){
+     super(props) 
+     this.state = {
+        visible: false
+     }
+  }
+  
   showModal() {
     this.setState({
       visible: true,
     });
-  },
+  }
   handleOk() {
     console.log('Clicked OK');
     this.setState({
       visible: false,
     });
-  },
+  }
   handleCancel(e) {
     console.log(e);
     this.setState({
       visible: false,
     });
-  },
+  }
   render() {
     return (
       <div>
@@ -41,8 +45,8 @@ const App = React.createClass({
         </Modal>
       </div>
     );
-  },
-});
+  }
+};
 
 ReactDOM.render(<App />, mountNode);
 ````
