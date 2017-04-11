@@ -24,7 +24,8 @@
 
   &:hover,
   &:focus {
-    .button-color(@color; tint(@background, 20%); tint(@background, 20%));
+    //.button-color(@color; tint(@background, 20%); tint(@background, 20%));
+    .button-color(@color; #c23d43;#c23d43 );
   }
 
   &:active,
@@ -41,6 +42,7 @@
   &:hover,
   &:focus {
     .button-color(tint(@primary-color, 20%); @background; tint(@primary-color, 20%));
+    //.button-color(#c23d43; @background; #c23d43);
   }
 
   &:active,
@@ -90,7 +92,7 @@
   }
 
   &-sm > .@{btnClassName} {
-    .button-size(@btn-padding-sm; @font-size-base; @btn-border-radius-sm);
+    .button-size(@btn-padding-sm; @btn-font-size-sm; @btn-border-radius-sm);
     > .@{iconfont-css-prefix} {
       font-size: @font-size-base;
     }
@@ -147,7 +149,7 @@
   }
 
   &-sm {
-    .button-size(@btn-padding-sm; @font-size-base; @btn-border-radius-sm);
+    .button-size(@btn-padding-sm; @btn-font-size-sm; @btn-border-radius-sm);
   }
 }
 
@@ -170,12 +172,27 @@
 // ghost button style
 .btn-ghost() {
   .button-variant-other(@btn-ghost-color, @btn-ghost-bg, @btn-ghost-border);
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background: #dbdbdb;
+    color:#fff;
+    border-color: #dbdbdb;
+  }
 }
 
 // ghost button style
 .btn-dashed() {
   .button-variant-other(@btn-ghost-color, @btn-ghost-bg, @btn-ghost-border);
   border-style: dashed;
+  &:hover,
+  &:focus,
+  &:active{
+    background: #fff;
+    color:#666;
+    border-color: #dbdbdb;
+  }
 }
 
 // circle button: the content only contains icon

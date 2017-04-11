@@ -11,12 +11,12 @@
 @mi-prefix             : mi;
 
 // Color
-@primary-color          : @blue-6;
+@primary-color          : #108ee9;
 @info-color             : @blue-6;
-@success-color          : @green-6;
-@error-color            : @red-6;
-@highlight-color        : @red-6;
-@warning-color          : @yellow-6;
+@success-color          : #87d068;
+@error-color            : #f50;
+@highlight-color        : #f50;
+@warning-color          : #fa0;
 @normal-color           : #d9d9d9;
 
 @primary-1: color(~`colorPalette("@{primary-color}", 1)`);  // replace tint(@primary-color, 90%)
@@ -38,23 +38,24 @@
 @heading-color          : fade(#000, 85%);
 @text-color             : fade(#000, 65%);
 @text-color-secondary   : fade(#000, 43%);
-@disabled-color         : fade(#000, 25%);
+@disabled-color         : #ccc;
 @heading-color-dark     : fade(#fff, 97%);
 @text-color-dark        : fade(#fff, 91%);
 @text-color-secondary-dark: fade(#fff, 67%);
 @disabled-color-dark    : fade(#fff, 35%);
 @font-size-base         : 12px;
-@font-size-lg           : @font-size-base + 2px;
+@font-size-lg           : @font-size-base + 10px;
+@font-size-sm           : 16px;
 @line-height-base       : 1.5;
-@border-radius-base     : 4px;
-@border-radius-sm       : 2px;
+@border-radius-base     : 3px;
+@border-radius-sm       : 3px;
 
 // ICONFONT
 @iconfont-css-prefix    : anticon;
 @icon-url               : "https://at.alicdn.com/t/font_0qcp222wvwijm7vi";
 
 // LINK
-@link-color             : @primary-color;
+@link-color             : #108ee9;
 @link-hover-color       : @primary-5;
 @link-active-color      : @primary-7;
 @link-hover-decoration  : none;
@@ -82,7 +83,7 @@
 // Outline
 @outline-blur-size      : 0;
 @outline-width          : 2px;
-@outline-color          : @primary-color;
+@outline-color          : #fff;
 
 // Background color
 @background-color-base  : #f7f7f7;        // basic gray background
@@ -99,7 +100,7 @@
 // Buttons
 @btn-font-weight        : 500;
 @btn-border-radius-base : @border-radius-base;
-@btn-border-radius-sm   : @border-radius-base;
+@btn-border-radius-sm   : @border-radius-sm;
 
 @btn-primary-color      : #fff;
 @btn-primary-bg         : @primary-color;
@@ -115,10 +116,11 @@
 @btn-disable-bg         : @background-color-base;
 @btn-disable-border     : @border-color-base;
 
-@btn-padding-base       : 4px 15px;
+@btn-padding-base       : 8px 15px;
 @btn-font-size-lg       : @font-size-lg;
-@btn-padding-lg         : 4px 15px 5px 15px;
-@btn-padding-sm         : 1px 7px;
+@btn-padding-lg         : 8px 30px 8px 30px;
+@btn-font-size-sm       : @font-size-sm;
+@btn-padding-sm         : 2px 17px;
 
 @btn-circle-size        : 28px;
 @btn-circle-size-lg     : 32px;
@@ -130,18 +132,22 @@
 // Extra small screen / phone
 @screen-xs              : 480px;
 @screen-xs-min          : @screen-xs;
+@screen-xs-max          : (@screen-xs-min - 1);
 
 // Small screen / tablet
 @screen-sm              : 768px;
 @screen-sm-min          : @screen-sm;
+@screen-sm-max          : (@screen-sm-min - 1);
 
 // Medium screen / desktop
 @screen-md              : 992px;
 @screen-md-min          : @screen-md;
+@screen-md-max          : (@screen-md-min - 1);
 
 // Large screen / wide desktop
 @screen-lg              : 1200px;
 @screen-lg-min          : @screen-lg;
+@screen-lg-max          : (@screen-lg-min - 1);
 
 // Extra Large screen / full hd
 @screen-xl              : 1600px;
@@ -240,7 +246,6 @@
 // Progress
 // --
 @process-default-color: @primary-color;
-
 // Menu
 // ---
 @menu-dark-bg: @layout-header-background;
