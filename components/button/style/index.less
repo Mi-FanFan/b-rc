@@ -47,6 +47,10 @@
   &-dashed {
     .btn-dashed;
   }
+  
+  &-danger{
+    .btn-danger;
+  }
 
   &-circle,
   &-circle-outline {
@@ -117,6 +121,11 @@
     animation: buttonEffect 0.36s ease-out forwards;
     display: block;
   }
+
+  &-danger&-clicked:after{
+    border-color: @btn-danger-bg;
+  }
+
 }
 
 @keyframes buttonEffect {

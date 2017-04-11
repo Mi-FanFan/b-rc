@@ -26,9 +26,12 @@ class ButtonSize extends React.Component {
     const size = this.state.size;
     return (
       <div>
-        <Button type="primary" shape="circle" icon="download" size={size} />
-        <Button type="primary" icon="download" size={size}>Download</Button>
-        <Button type="primary" size={size}>Normal</Button>
+        <Button type="primary" size="large" >立即夺宝</Button>
+        <Button type="ghost" size="large" >立即夺宝</Button>
+        <Button type="dashed" size="large" >立即夺宝</Button>
+        <Button type="primary" size="small" >立即夺宝</Button>
+        <Button type="ghost" size="small" >立即夺宝</Button>
+        <Button type="dashed" size="small" >立即夺宝</Button>
         <br />
       </div>
     );

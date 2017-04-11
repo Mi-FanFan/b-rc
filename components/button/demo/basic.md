@@ -13,10 +13,11 @@ import { Button } from 'b-rc';
 
 ReactDOM.render(
   <div>
-    <Button type="primary">Primary</Button>
+    <Button type="primary" >立即夺宝</Button>
     <Button>Default</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="danger">Danger</Button>
+    <Button type="dashed">立即夺宝</Button>
+    <Button type="ghost">立即夺宝</Button>
+    <Button type="danger">Danger</Button> 
   </div>
 , mountNode);
 ````

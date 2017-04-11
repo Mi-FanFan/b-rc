@@ -28,10 +28,10 @@ export default class Modal extends React.Component {
   render () {
     let {okText, cancelText, confirmLoading, footer, visible} = this.props
     const defaultFooter = [
-      <Button key="cancel" type="ghost" size="large" onClick={this.handleCancel}>
+      <Button key="cancel" type="ghost" onClick={this.handleCancel}>
         {cancelText || '取消'}
       </Button>,
-      <Button key="confirm" type="primary" size="large" loading={confirmLoading} onClick={this.handleOk}>
+      <Button key="confirm" type="primary" loading={confirmLoading} onClick={this.handleOk}>
         {okText || '确定'}
       </Button>,
     ]

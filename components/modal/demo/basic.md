@@ -10,6 +10,9 @@ import { Modal, Button } from 'b-rc';
 class App extends React.Component{
   constructor(props){
      super(props) 
+     this.showModal = this.showModal.bind(this)
+     this.handleOk = this.handleOk.bind(this)
+     this.handleCancel = this.handleCancel.bind(this)
      this.state = {
         visible: false
      }
