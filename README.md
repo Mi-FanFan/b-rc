@@ -42,6 +42,6 @@ With [yarn](https://yarnpkg.com/)
 - Manually import
 
    ```jsx
-   import DatePicker from 'b-rc/lib/button';  // for js
+   import Button from 'b-rc/lib/button';  // for js
    import 'b-rc/lib/button/style';         // that will import less
    ```
