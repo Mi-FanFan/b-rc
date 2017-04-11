@@ -12,10 +12,15 @@ const ButtonPage = () => {
         <section className="code-box" id="components-button-demo-basic">
           <section className="code-box-demo">
             <div>
-              <Button type="primary">Primary</Button>
-              <Button>Default</Button>
-              <Button type="ghost">Ghost</Button>
-              <Button type="dashed">Dashed</Button>
+                <Button type="primary" >立即夺宝</Button>
+                <Button type="ghost">立即夺宝</Button>
+                <Button type="dashed">立即夺宝</Button>
+                <Button type="primary" size="large" >立即夺宝</Button>
+                <Button type="ghost" size="large" >立即夺宝</Button>
+                <Button type="dashed" size="large" >立即夺宝</Button>
+                <Button type="primary" size="small" >立即夺宝</Button>
+                <Button type="ghost" size="small" >立即夺宝</Button>
+                <Button type="dashed" size="small" >立即夺宝</Button>
             </div>
           </section>
         </section>
