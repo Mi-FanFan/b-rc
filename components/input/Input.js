@@ -1,6 +1,7 @@
 import React, { cloneElement }from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import omit from 'lodash/omit'
 export default class Input extends React.Component {
   constructor (props) {
     super(props)
@@ -28,13 +29,17 @@ export default class Input extends React.Component {
 
   renderInput () {
     const {type, placeholder, size, className, prefixCls} = this.props
-
+    const otherProps = omit(this.props,[
+      'prefixCls',
+      'prefix',
+      'suffix'
+    ])  
     const inputClassName = classNames(prefixCls, {
       [`${prefixCls}-sm`]: size === 'small',
       [`${prefixCls}-lg`]: size === 'large',
     }, className)
     return (
-      <input type={type} placeholder={placeholder} className={inputClassName} {...this.props}/>
+      <input type={type} placeholder={placeholder} className={inputClassName} {...otherProps}/>
     )
   }
 
