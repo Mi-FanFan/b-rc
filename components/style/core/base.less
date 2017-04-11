@@ -61,6 +61,11 @@ a {
   cursor: pointer;
   transition: color .3s ease;
 
+  &:focus {
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+
   &:hover {
     color: @link-hover-color;
   }
@@ -76,13 +81,13 @@ a {
   }
 
   &[disabled] {
-    color: #ccc;
+    color: @disabled-color;
     cursor: not-allowed;
     pointer-events: none;
   }
 }
 
-.@{ant-prefix}-divider {
+.@{mi-prefix}-divider {
   margin: 0 6px;
   display: inline-block;
   height: 8px;

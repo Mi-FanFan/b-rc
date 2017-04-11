@@ -1971,10 +1971,11 @@ create-hmac@^1.1.0, create-hmac@^1.1.2:
     inherits "^2.0.1"
 
 create-react-class@^15.5.1:
-  version "15.5.1"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.5.1.tgz#25a138a42d1c9df6d5c70fea29ec6ccf5ae165b8"
+  version "15.5.2"
+  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.5.2.tgz#6a8758348df660b88326a0e764d569f274aad681"
   dependencies:
     fbjs "^0.8.9"
+    object-assign "^4.1.1"
 
 cross-spawn-async@^2.2.2:
   version "2.2.5"
@@ -5885,8 +5886,8 @@ rc-input-number@~2.6.3:
     classnames "^2.2.0"
 
 rc-input-number@~3.4.4:
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/rc-input-number/-/rc-input-number-3.4.10.tgz#59ac44d221329ce94f08185a58e9ef05827c3fee"
+  version "3.4.11"
+  resolved "https://registry.yarnpkg.com/rc-input-number/-/rc-input-number-3.4.11.tgz#a4093da5815a4ed6e280dc5bb31612a4f01f91e1"
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.0"
@@ -6278,8 +6279,8 @@ react-router@^2.4.0:
     warning "^3.0.0"
 
 react-router@^3.0.0:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-3.0.4.tgz#25ce0a50dc07bc6ebaeabfd902cad5064da10f22"
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-3.0.5.tgz#c3b7873758045a8bbc9562aef4ff4bc8cce7c136"
   dependencies:
     create-react-class "^15.5.1"
     history "^3.0.0"
@@ -7276,8 +7277,8 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 typescript@^2.0.3:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.2.2.tgz#606022508479b55ffa368b58fee963a03dfd7b0c"
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.0.tgz#2e63e09284392bc8158a2444c33e2093795c0418"
 
 ua-parser-js@^0.7.9:
   version "0.7.12"
