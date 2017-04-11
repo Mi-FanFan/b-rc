@@ -8,15 +8,17 @@ title: 前缀和后缀
 import { Input ,Icon} from 'b-rc';
 
 class App extends React.Component{
-    constructor(props){
+    constructor(props) {
         super(props)
+        this.emitEmpty = this.emitEmpty.bind(this);
+        this.onChangeUserName = this.onChangeUserName.bind(this);
         this.state = {
             userName:''
         }
     }
 
     emitEmpty(){
-        this.userNameInput.focus()
+        this.userNameInput.focus
         this.setState({
             userName:''
         })
@@ -39,12 +41,12 @@ class App extends React.Component{
                 suffix={suffix}
                 value={userName}
                 onChange={this.onChangeUserName}
-                ref={node => this.userNameInput = node}
+                ref={input => {this.userNameInput = input}}
             />
         )
     }
 
 }
 
-ReactDOM.render(<Input placeholder="Basic Input" />, mountNode);
+ReactDOM.render(<App />, mountNode);
 ````
