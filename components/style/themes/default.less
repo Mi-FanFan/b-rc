@@ -2,7 +2,7 @@
 @mi-prefix             : mi;
 
 // Color
-@primary-color          : #108ee9;
+@primary-color          : #c21e25;
 @success-color          : #87d068;
 @error-color            : #f50;
 @highlight-color        : #f50;
@@ -15,13 +15,17 @@
 @font-family            : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @code-family            : Consolas, Menlo, Courier, monospace;
 @text-color             : #666;
+@ghost-color            :#fff;
+@ghost-bg               :#dbdbdb;
 @heading-color          : #404040;
 @text-color-secondary   : #999;
 @font-size-base         : 12px;
-@font-size-lg           : @font-size-base + 2px;
+@font-size-lg           : @font-size-base + 10px;
+@font-size-sm           : 16px;
 @line-height-base       : 1.5;
-@border-radius-base     : 4px;
-@border-radius-sm       : 2px;
+@border-radius-base     : 3px;
+@border-radius-sm       : 3px;
+
 
 // ICONFONT
 @iconfont-css-prefix    : anticon;
@@ -54,7 +58,7 @@
 // Outline
 @outline-blur-size      : 0;
 @outline-width          : 2px;
-@outline-color          : @primary-color;
+@outline-color          : #fff;
 
 // Background color
 @background-color-base  : #f7f7f7;        // basic gray background
@@ -81,8 +85,8 @@
 @btn-default-bg         : @background-color-base;
 @btn-default-border     : @border-color-base;
 
-@btn-ghost-color        : @text-color;
-@btn-ghost-bg           : transparent;
+@btn-ghost-color        : @ghost-color;
+@btn-ghost-bg           : @ghost-bg;
 @btn-ghost-border       : @border-color-base;
 
 @btn-disable-color      : #ccc;
@@ -90,9 +94,12 @@
 @btn-disable-border     : @border-color-base;
 
 @btn-padding-base       : 8px 15px;
+//@btn-padding-base       : 8px 20px;
 @btn-font-size-lg       : @font-size-lg;
-@btn-padding-lg         : 8px 15px 8px 15px;
-@btn-padding-sm         : 1px 7px;
+//@btn-padding-lg         : 8px 15px 8px 15px;
+@btn-padding-lg         : 8px 30px 8px 30px;
+@btn-font-size-sm       : @font-size-sm;
+@btn-padding-sm         : 2px 17px;
 
 @btn-circle-size        : 28px;
 @btn-circle-size-lg     : 32px;
