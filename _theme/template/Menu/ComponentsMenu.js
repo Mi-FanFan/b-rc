@@ -9,6 +9,7 @@ const componentOrder = [
   'General',
   'Data Entry',
   'Feedback',
+  'Navigation',
 ];
 
 function getComponentsMenuLink(meta) {

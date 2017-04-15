@@ -60,11 +60,13 @@ class Tabs extends Component {
       tabBarPosition,
       className,
       style,
+      size,
       children
     }  = this.props;
     const cls = classNames({
       [prefixCls]: 1,
       [`${prefixCls}-${tabBarPosition}`]: 1,
+      [`${prefixCls}-mini`]: size === 'small' || size === 'mini',
       [className]: !!className,
     });
 
@@ -97,6 +99,7 @@ Tabs.propTypes = {
   className: PropTypes.string,
   tabBarPosition: PropTypes.string,
   style: PropTypes.object,
+  size:PropTypes.string,
 }
 
 Tabs.defaultProps = {
