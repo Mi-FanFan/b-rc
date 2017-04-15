@@ -9,3 +9,5 @@ lib
 npm-debug.log
 
 _site
+
+.vscode
