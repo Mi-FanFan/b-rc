@@ -48,7 +48,7 @@ export default class Input extends React.Component {
   }
 }
 Input.defaultProps = {
-  prefixCls: 'mi-input',
+  prefixCls: 'mff-input',
   disabled: false,
   type: 'text',
 }

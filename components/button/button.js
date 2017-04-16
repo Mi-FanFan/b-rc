@@ -54,8 +54,7 @@ export default class Button extends React.Component {
   }
   render() {
     const props = this.props;
-    const {type, shape, size = '', className, htmlType, children, icon, loading, prefixCls} = props,
-        others = __rest(props, ["type", "shape", "size", "className", "htmlType", "children", "icon", "loading", "prefixCls"]);
+    const {type, shape, size = '', className, htmlType, children, icon, loading, prefixCls,...others} = props;
     // large => lg
     // small => sm
     const sizeCls = ({
@@ -88,7 +87,7 @@ export default class Button extends React.Component {
   }
 }
 Button.defaultProps = {
-  prefixCls: 'mi-btn',
+  prefixCls: 'mff-btn',
   loading: false,
 };
 Button.propTypes = {

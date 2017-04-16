@@ -18,7 +18,7 @@ ReactDOM.render(
 ````
 
 ````css
-.example-input .mi-input{
+.example-input .mff-input{
   width:200px;
   margin:0 8px 8px 0;
 }

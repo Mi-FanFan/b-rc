@@ -18,7 +18,7 @@ ReactDOM.render(
 ````
 
 <style>
-.mi-loading {
+.mff-loading {
   margin-right: 16px;
 }
 </style>

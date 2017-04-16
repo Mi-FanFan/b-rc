@@ -41,7 +41,7 @@ export default class Modal extends React.Component {
   }
 }
 Modal.defaultProps = {
-  prefixCls: 'mi-modal',
+  prefixCls: 'mff-modal',
   width: 520,
   transitionName: 'zoom',
   maskTransitionName: 'fade',

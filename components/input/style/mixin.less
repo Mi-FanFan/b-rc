@@ -144,10 +144,10 @@
     transition: all .3s;
 
     // Reset Select's style in addon
-    .@{mi-prefix}-select {
+    .@{mff-prefix}-select {
       margin: -(@input-padding-vertical-base + 1) (-@input-padding-horizontal);  // lesshint spaceAroundOperator: false
 
-      .@{mi-prefix}-select-selection {
+      .@{mff-prefix}-select-selection {
         background-color: inherit;
         margin: -1px;
         border: @border-width-base @border-style-base transparent;
@@ -156,14 +156,14 @@
 
       &-open,
       &-focused {
-        .@{mi-prefix}-select-selection {
+        .@{mff-prefix}-select-selection {
           color: @primary-color;
         }
       }
     }
 
     // Expand addon icon click area
-    // https://github.com/mi-design/mi-design/issues/3714
+    // https://github.com/mff-design/mff-design/issues/3714
     > i:only-child:after {
       position: absolute;
       content: '';
@@ -182,7 +182,7 @@
     border-top-right-radius: 0;
 
     // Reset Select's style in addon
-    .@{mi-prefix}-select .@{mi-prefix}-select-selection {
+    .@{mff-prefix}-select .@{mff-prefix}-select-selection {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
@@ -213,7 +213,7 @@
     border-top-left-radius: 0;
 
     // Reset Select's style in addon
-    .@{mi-prefix}-select .@{mi-prefix}-select-selection {
+    .@{mff-prefix}-select .@{mff-prefix}-select-selection {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
     }
@@ -243,29 +243,29 @@
       vertical-align: middle;
     }
 
-    // Undo float for .mi-input-group .mi-input
+    // Undo float for .mff-input-group .mff-input
     .@{inputClass} {
       float: none;
       z-index: auto;
     }
 
     // reset border for Select, datePicker
-    & > .@{mi-prefix}-select > .@{mi-prefix}-select-selection,
-    & > .@{mi-prefix}-calendar-picker .@{mi-prefix}-input {
+    & > .@{mff-prefix}-select > .@{mff-prefix}-select-selection,
+    & > .@{mff-prefix}-calendar-picker .@{mff-prefix}-input {
       border-radius: 0;
       border-right-width: 0;
     }
 
     & > *:first-child,
-    & > .@{mi-prefix}-select:first-child > .@{mi-prefix}-select-selection,
-    & > .@{mi-prefix}-calendar-picker:first-child .@{mi-prefix}-input {
+    & > .@{mff-prefix}-select:first-child > .@{mff-prefix}-select-selection,
+    & > .@{mff-prefix}-calendar-picker:first-child .@{mff-prefix}-input {
       border-top-left-radius: @border-radius-base;
       border-bottom-left-radius: @border-radius-base;
     }
 
     & > *:last-child,
-    & > .@{mi-prefix}-select:last-child > .@{mi-prefix}-select-selection,
-    & > .@{mi-prefix}-calendar-picker:last-child .@{mi-prefix}-input {
+    & > .@{mff-prefix}-select:last-child > .@{mff-prefix}-select-selection,
+    & > .@{mff-prefix}-calendar-picker:last-child .@{mff-prefix}-input {
       border-top-right-radius: @border-radius-base;
       border-bottom-right-radius: @border-radius-base;
       border-right-width: 1px;

@@ -79,7 +79,7 @@ export default class BackTop extends React.Component {
     }
   }
   render() {
-    const { prefixCls = 'mi-back-top', className = '', children } = this.props;
+    const { prefixCls = 'mff-back-top', className = '', children } = this.props;
     const classString = classNames(prefixCls, className);
     const defaultElement = (<div className={`${prefixCls}-content`}>
       <Icon className={`${prefixCls}-icon`} type="to-top"/>

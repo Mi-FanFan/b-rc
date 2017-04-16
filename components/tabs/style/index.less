@@ -1,7 +1,7 @@
 @import "../../style/themes/default";
 @import "../../style/mixins/index";
 
-@tab-prefix-cls: ~"@{mi-prefix}-tabs";
+@tab-prefix-cls: ~"@{mff-prefix}-tabs";
 
 .@{tab-prefix-cls} {
   box-sizing: border-box;
@@ -27,8 +27,9 @@
   }
 
   &-bar {
-    //border-bottom: 1px solid @border-color-base;
+    border-bottom: 1px solid @border-color-base;
     margin-bottom: 16px;
+    outline: none;
   }
 
   &-nav-container {
@@ -177,6 +178,7 @@
 
     .@{tab-prefix-cls}-tab-active {
       color: @primary-color;
+      border-bottom: 2px solid @primary-color;
     }
   }
 

@@ -8,8 +8,8 @@ import classNames from 'classnames'
 const TopTips = (props) => {
   const {className, type, children, show, ...others} = props;
   const cls = classNames({
-    'mi-toptips': true,
-    [`mi-toptips_${type}`]: true,
+    'mff-toptips': true,
+    [`mff-toptips_${type}`]: true,
     [className]: className
   });
   return (

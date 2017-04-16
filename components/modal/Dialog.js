@@ -167,7 +167,7 @@ Dialog.defaultProps = {
   visible: false,
   closable: true,
   maskClosable: true,
-  prefixCls: 'mi-modal',
+  prefixCls: 'mff-modal',
 }
 
 export default Dialog

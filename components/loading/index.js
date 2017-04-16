@@ -33,7 +33,7 @@ Loading.propTypes = {
 }
 
 Loading.defaultProps = {
-  prefixCls: 'mi-loading',
+  prefixCls: 'mff-loading',
 }
 
 export default Loading;

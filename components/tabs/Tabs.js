@@ -103,7 +103,7 @@ Tabs.propTypes = {
 }
 
 Tabs.defaultProps = {
-  prefixCls: 'mi-tabs',
+  prefixCls: 'mff-tabs',
   destroyInactiveTabPane: false,
   tabBarPosition: 'top',
   style: {},
