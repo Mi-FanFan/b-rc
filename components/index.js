@@ -13,5 +13,6 @@ export {default as Tabs} from './tabs'
 export {default as Toaster} from './toaster';
 export {default as Loading} from './loading'
 export {default as Modal} from './modal'
+export {default as Progress} from './progress'
 //Data Entry
 export {default as Input} from './input'
