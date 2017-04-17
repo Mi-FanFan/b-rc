@@ -54,6 +54,7 @@
     "bisheng-plugin-antd": "0.3.2",
     "bisheng-plugin-react": "0.2.2",
     "codemirror": "*",
+    "create-react-class": "^15.5.2",
     "css-loader": "*",
     "enzyme": "*",
     "eslint": "*",

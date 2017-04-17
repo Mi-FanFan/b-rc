@@ -4,9 +4,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames'
-import RootNodeTabBar from './RootNodeTabBar'
 import TabContent from './TabContent'
-
+import TabBar from './TabBar';
 function getDefaultActiveKey(props) {
   let activeKey;
   React.Children.forEach(props.children, child => {
@@ -44,7 +43,7 @@ class Tabs extends Component {
     if (this.state.activeKey !== activeKey) {
       if (!('activeKey' in this.props)) {
         this.setState({
-          activeKey:activeKey
+          activeKey: activeKey
         })
       }
     }
@@ -61,8 +60,9 @@ class Tabs extends Component {
       className,
       style,
       size,
+      renderTabBar,
       children
-    }  = this.props;
+    } = this.props;
     const cls = classNames({
       [prefixCls]: 1,
       [`${prefixCls}-${tabBarPosition}`]: 1,
@@ -70,25 +70,33 @@ class Tabs extends Component {
       [className]: !!className,
     });
 
-
+    this.tabBar = renderTabBar();
+    const contents = [
+      React.cloneElement(this.tabBar, {
+        prefixCls,
+        key: 'tabBar',
+        onKeyDown: this.onNavKeyDown,
+        tabBarPosition,
+        onTabClick: this.handleTabClick,
+        panels: children,
+        activeKey: this.state.activeKey,
+      }),
+      <TabContent
+        key="tabContent"
+        activeKey={this.state.activeKey}
+        children={children}
+        prefixCls={prefixCls}
+      />,
+    ];
+    if (tabBarPosition === 'bottom') {
+      contents.reverse();
+    }
     return (
       <div
         className={cls}
         style={style}
       >
-        <RootNodeTabBar
-          prefixCls={prefixCls}
-          activeKey={this.state.activeKey}
-          panels={children}
-          key="tabBar"
-          onTabClick={this.handleTabClick}
-        />
-        <TabContent
-        key="tabContent"
-        activeKey={this.state.activeKey}
-        children={children}
-        prefixCls={prefixCls}
-        />
+        {contents}
       </div>
     )
   }
@@ -99,7 +107,8 @@ Tabs.propTypes = {
   className: PropTypes.string,
   tabBarPosition: PropTypes.string,
   style: PropTypes.object,
-  size:PropTypes.string,
+  size: PropTypes.string,
+  renderTabBar: PropTypes.func.isRequired,
 }
 
 Tabs.defaultProps = {
@@ -107,6 +116,7 @@ Tabs.defaultProps = {
   destroyInactiveTabPane: false,
   tabBarPosition: 'top',
   style: {},
+  renderTabBar:() => <TabBar />
 }
 
 export default Tabs
