@@ -6055,6 +6055,14 @@ rc-table@~5.2.13:
     shallowequal "^0.2.2"
     warning "^3.0.0"
 
+rc-tabs@^7.3.1, rc-tabs@~7.3.0:
+  version "7.3.1"
+  resolved "http://registry.npm.taobao.org/rc-tabs/download/rc-tabs-7.3.1.tgz#95ad3cdd41e75e0ca22fa63f9c9d4f489cf93d70"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "2.x"
+    react-hammerjs "~0.5.0"
+
 rc-tabs@~5.9.2:
   version "5.9.3"
   resolved "https://registry.yarnpkg.com/rc-tabs/-/rc-tabs-5.9.3.tgz#f8a5f7ec92a4af5374f4ad021d674ec91c4c7e4b"
@@ -6062,14 +6070,6 @@ rc-tabs@~5.9.2:
     babel-runtime "6.x"
     classnames "2.x"
     rc-animate "2.x"
-
-rc-tabs@~7.3.0:
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/rc-tabs/-/rc-tabs-7.3.1.tgz#95ad3cdd41e75e0ca22fa63f9c9d4f489cf93d70"
-  dependencies:
-    babel-runtime "6.x"
-    classnames "2.x"
-    react-hammerjs "~0.5.0"
 
 rc-time-picker@~1.1.6:
   version "1.1.6"

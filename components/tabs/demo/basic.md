@@ -10,7 +10,7 @@ title: 基本
 ````jsx
 import { Tabs } from 'b-rc';
 const TabPane = Tabs.TabPane;
-import TabBar from 'b-rc/lib/tabs/TabBar';
+
 function callback(key) {
   console.log(key);
 }
@@ -19,7 +19,6 @@ ReactDOM.render(
   <Tabs 
   defaultActiveKey="1" 
   onChange={callback} 
-  renderTabBar={() => <TabBar />}
   >
     <TabPane tab="Tab 1" key="1">Content of Tab Pane 1</TabPane>
     <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
