@@ -4,109 +4,107 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames'
-import RootNodeTabBar from './RootNodeTabBar'
-import TabContent from './TabContent'
-
-function getDefaultActiveKey(props) {
-  let activeKey;
-  React.Children.forEach(props.children, child => {
-    if (child && !activeKey && !child.props.disabled) {
-      activeKey = child.key
-    }
-  })
-  return activeKey;
-}
-
+import RcTabs, { TabPane } from 'rc-tabs';
+import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
+import TabContent from 'rc-tabs/lib/TabContent';
 class Tabs extends Component {
   constructor(props) {
     super(props);
-    this.setActiveKey = this.setActiveKey.bind(this);
-    this.handleTabClick = this.handleTabClick.bind(this);
-    this.getInitState = this.getInitState.bind(this);
-    this.state = {
-      activeKey: this.getInitState(props)
-    }
+    this.handleChange = this.handleChange.bind(this);
+
   }
 
-  getInitState(props) {
-    let activeKey;
-    if ('activeKey' in props) {
-      activeKey = props.activeKey
-    } else if ('defaultActiveKey' in props) {
-      activeKey = props.defaultActiveKey;
-    } else {
-      activeKey = getDefaultActiveKey(props);
+  handleChange (activeKey){
+    const onChange = this.props.onChange;
+    if (onChange) {
+      onChange(activeKey);
     }
-    return activeKey;
-  }
-
-  setActiveKey(activeKey) {
-    if (this.state.activeKey !== activeKey) {
-      if (!('activeKey' in this.props)) {
-        this.setState({
-          activeKey:activeKey
-        })
-      }
-    }
-  }
-
-  handleTabClick(activeKey) {
-    this.setActiveKey(activeKey)
   }
 
   render() {
-    const {
+    let {
       prefixCls,
-      tabBarPosition,
-      className,
-      style,
+      className = '',
       size,
-      children
-    }  = this.props;
-    const cls = classNames({
-      [prefixCls]: 1,
-      [`${prefixCls}-${tabBarPosition}`]: 1,
+      type = 'line',
+      tabPosition,
+      children,
+      tabBarExtraContent,
+      tabBarStyle,
+      onTabClick,
+      onPrevClick,
+      onNextClick,
+      animated,
+    } = this.props;
+    let { inkBarAnimated, tabPaneAnimated } = typeof animated === 'object' ? {
+      inkBarAnimated: animated.inkBar, tabPaneAnimated: animated.tabPane,
+    } : {
+        inkBarAnimated: animated, tabPaneAnimated: animated,
+      };
+    if (type !== 'line') {
+      tabPaneAnimated = false;
+    }
+
+    let cls = classNames(className, {
       [`${prefixCls}-mini`]: size === 'small' || size === 'mini',
-      [className]: !!className,
+      [`${prefixCls}-vertical`]: tabPosition === 'left' || tabPosition === 'right',
+      [`${prefixCls}-card`]: type.indexOf('card') >= 0,
+      [`${prefixCls}-${type}`]: true,
+      [`${prefixCls}-no-animation`]: !animated,
     });
 
-
-    return (
-      <div
-        className={cls}
-        style={style}
-      >
-        <RootNodeTabBar
-          prefixCls={prefixCls}
-          activeKey={this.state.activeKey}
-          panels={children}
-          key="tabBar"
-          onTabClick={this.handleTabClick}
-        />
-        <TabContent
-        key="tabContent"
-        activeKey={this.state.activeKey}
-        children={children}
-        prefixCls={prefixCls}
-        />
+    tabBarExtraContent = tabBarExtraContent ? (
+      <div className={`${prefixCls}-extra-content`}>
+        {tabBarExtraContent}
       </div>
-    )
+    ) : null;
+    const renderTabBar = () => (
+      <ScrollableInkTabBar
+        inkBarAnimated={inkBarAnimated}
+        extraContent={tabBarExtraContent}
+        onTabClick={onTabClick}
+        onPrevClick={onPrevClick}
+        onNextClick={onNextClick}
+        style={tabBarStyle}
+      />
+    );
+    return (
+      <RcTabs
+        {...this.props}
+        className={cls}
+        tabBarPosition={tabPosition}
+        renderTabBar={renderTabBar}
+        renderTabContent={() => <TabContent animated={tabPaneAnimated} animatedWithMargin />}
+        onChange={this.handleChange}
+      >
+        {children}
+      </RcTabs>
+    );
   }
+
 }
 Tabs.propTypes = {
-  children: PropTypes.any,
+  activeKey: PropTypes.string,
+  defaultActiveKey: PropTypes.string,
+  onChange: PropTypes.func,
+  onTabClick: PropTypes.func,
+  onPrevClick: PropTypes.func,
+  onNextClick: PropTypes.func,
+  tabBarExtraContent: PropTypes.node,
+  tabBarStyle: PropTypes.object,
+  type: PropTypes.oneOf(['line' , 'card']),
+  tabPosition: PropTypes.oneOf(['top' , 'right' , 'bottom' , 'left']),
+  size: PropTypes.oneOf(['default' , 'small']),
+  style: PropTypes.object,
   prefixCls: PropTypes.string,
   className: PropTypes.string,
-  tabBarPosition: PropTypes.string,
-  style: PropTypes.object,
-  size:PropTypes.string,
+  animated:   PropTypes.bool,
 }
 
 Tabs.defaultProps = {
   prefixCls: 'mff-tabs',
-  destroyInactiveTabPane: false,
-  tabBarPosition: 'top',
-  style: {},
+  animated: true,
 }
 
+Tabs.TabPane = TabPane;
 export default Tabs
