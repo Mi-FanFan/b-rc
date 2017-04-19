@@ -3,12 +3,12 @@ var path = require('path');
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-
+const port = 8081
 module.exports = {
   context: path.join(__dirname, 'example'),
   entry: [
     'react-hot-loader/patch',
-    `webpack-dev-server/client?http://localhost:8080`,
+    `webpack-dev-server/client?http://localhost:${port}`,
     'webpack/hot/only-dev-server',
     './app.js'
   ],
@@ -22,7 +22,7 @@ module.exports = {
     hot: true,
     open: true,
     inline: true,
-    port: 8080
+    port: port
   },
   module: {
     rules: [
@@ -90,7 +90,7 @@ module.exports = {
 
     new webpack.NamedModulesPlugin(),
     // prints more readable module names in the browser console on HMR updates
-    new OpenBrowserPlugin({url: 'http://localhost:8080'})
+    new OpenBrowserPlugin({url: `http://localhost:${port}`})
   ],
   resolve: {
     modules: [

@@ -4,9 +4,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames'
-import RcTabs, { TabPane } from 'rc-tabs';
-import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
-import TabContent from 'rc-tabs/lib/TabContent';
+import MffTabs, { TabPane } from 'mff-tabs';
+import ScrollableInkTabBar from 'mff-tabs/lib/ScrollableInkTabBar';
+import ScrollableTabBar from 'mff-tabs/lib/ScrollableTabBar';
+import TabContent from 'mff-tabs/lib/TabContent';
 class Tabs extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ class Tabs extends Component {
   }
 
   handleChange (activeKey){
-    const onChange = this.props.onChange;
+    const {onChange} = this.props;
     if (onChange) {
       onChange(activeKey);
     }
@@ -35,6 +36,7 @@ class Tabs extends Component {
       onPrevClick,
       onNextClick,
       animated,
+      ink,
     } = this.props;
     let { inkBarAnimated, tabPaneAnimated } = typeof animated === 'object' ? {
       inkBarAnimated: animated.inkBar, tabPaneAnimated: animated.tabPane,
@@ -58,18 +60,27 @@ class Tabs extends Component {
         {tabBarExtraContent}
       </div>
     ) : null;
-    const renderTabBar = () => (
-      <ScrollableInkTabBar
-        inkBarAnimated={inkBarAnimated}
-        extraContent={tabBarExtraContent}
-        onTabClick={onTabClick}
-        onPrevClick={onPrevClick}
-        onNextClick={onNextClick}
-        style={tabBarStyle}
-      />
-    );
+    const renderTabBar = () =>  (
+      ink?
+        <ScrollableInkTabBar
+          inkBarAnimated={inkBarAnimated}
+          extraContent={tabBarExtraContent}
+          onTabClick={onTabClick}
+          onPrevClick={onPrevClick}
+          onNextClick={onNextClick}
+          style={tabBarStyle}
+        />
+        :
+        <ScrollableTabBar
+          extraContent={tabBarExtraContent}
+          onTabClick={onTabClick}
+          onPrevClick={onPrevClick}
+          onNextClick={onNextClick}
+          style={tabBarStyle}
+        />
+      );
     return (
-      <RcTabs
+      <MffTabs
         {...this.props}
         className={cls}
         tabBarPosition={tabPosition}
@@ -78,7 +89,7 @@ class Tabs extends Component {
         onChange={this.handleChange}
       >
         {children}
-      </RcTabs>
+      </MffTabs>
     );
   }
 
@@ -99,11 +110,13 @@ Tabs.propTypes = {
   prefixCls: PropTypes.string,
   className: PropTypes.string,
   animated:   PropTypes.bool,
+  ink:PropTypes.bool,
 }
 
 Tabs.defaultProps = {
   prefixCls: 'mff-tabs',
   animated: true,
+  ink: true,
 }
 
 Tabs.TabPane = TabPane;

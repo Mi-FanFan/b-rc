@@ -1970,7 +1970,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2:
     create-hash "^1.1.0"
     inherits "^2.0.1"
 
-create-react-class@^15.5.1, create-react-class@^15.5.2:
+create-react-class@15.x, create-react-class@^15.5.1, create-react-class@^15.5.2:
   version "15.5.2"
   resolved "http://registry.npm.taobao.org/create-react-class/download/create-react-class-15.5.2.tgz#6a8758348df660b88326a0e764d569f274aad681"
   dependencies:
@@ -4527,6 +4527,16 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
+mff-tabs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/mff-tabs/-/mff-tabs-1.1.0.tgz#843226d3ffa4315b0a5ee85fb3d029e236da235c"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "2.x"
+    create-react-class "15.x"
+    prop-types "15.x"
+    react-hammerjs "~0.5.0"
+
 micromatch@^2.1.5, micromatch@^2.3.11:
   version "2.3.11"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-2.3.11.tgz#86677c97d1720b363431d04d0d15293bd38c1565"
@@ -5615,7 +5625,7 @@ promise@~7.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.2, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@~15.5.0:
+prop-types@15.x, prop-types@^15.5.2, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@~15.5.0:
   version "15.5.6"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.6.tgz#797a915b1714b645ebb7c5d6cc690346205bd2aa"
   dependencies:
@@ -6055,14 +6065,6 @@ rc-table@~5.2.13:
     shallowequal "^0.2.2"
     warning "^3.0.0"
 
-rc-tabs@^7.3.1, rc-tabs@~7.3.0:
-  version "7.3.1"
-  resolved "http://registry.npm.taobao.org/rc-tabs/download/rc-tabs-7.3.1.tgz#95ad3cdd41e75e0ca22fa63f9c9d4f489cf93d70"
-  dependencies:
-    babel-runtime "6.x"
-    classnames "2.x"
-    react-hammerjs "~0.5.0"
-
 rc-tabs@~5.9.2:
   version "5.9.3"
   resolved "https://registry.yarnpkg.com/rc-tabs/-/rc-tabs-5.9.3.tgz#f8a5f7ec92a4af5374f4ad021d674ec91c4c7e4b"
@@ -6070,6 +6072,14 @@ rc-tabs@~5.9.2:
     babel-runtime "6.x"
     classnames "2.x"
     rc-animate "2.x"
+
+rc-tabs@~7.3.0:
+  version "7.3.1"
+  resolved "http://registry.npm.taobao.org/rc-tabs/download/rc-tabs-7.3.1.tgz#95ad3cdd41e75e0ca22fa63f9c9d4f489cf93d70"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "2.x"
+    react-hammerjs "~0.5.0"
 
 rc-time-picker@~1.1.6:
   version "1.1.6"
