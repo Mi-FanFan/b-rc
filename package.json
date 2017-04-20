@@ -1,6 +1,6 @@
 {
   "name": "b-rc",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "react components for budee front-end project",
   "main": "./lib",
   "scripts": {
@@ -30,6 +30,8 @@
     "omit.js": "^0.1.0",
     "rc-animate": "^2.3.1",
     "rc-util": "^4.0.2",
+    "react-tooltip": "^3.3.0",
+    "uuid": "^3.0.1",
     "warning": "^3.0.0"
   },
   "devDependencies": {

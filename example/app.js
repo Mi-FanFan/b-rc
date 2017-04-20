@@ -13,6 +13,7 @@ import ButtonPage from './pages/ButtonPage'
 import Typography from './pages/Typography'
 import LoadingPage from './pages/LoadingPage'
 import ModalPage from './pages/ModalPage'
+import TooltipPage from './pages/TooltipPage'
 import NouFound from './pages/NouFound'
 import './component/app.less'
 import App from './component/app'
@@ -33,6 +34,7 @@ ReactDOM.render((
         <Route path="tabs" component={TabsPage}/>
         <Route path="toaster" component={ToasterPage}/>
         <Route path="button" component={ButtonPage}/>
+        <Route path="tooltip" component={TooltipPage}/>
       </Route>
       <Route path="*" component={NouFound}/>
     </Route>
