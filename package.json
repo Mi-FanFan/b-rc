@@ -1,6 +1,6 @@
 {
   "name": "b-rc",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "react components for budee front-end project",
   "main": "./lib",
   "scripts": {
@@ -10,7 +10,7 @@
     "deploy": "npm run site && bisheng gh-pages",
     "clean": "rimraf ./lib",
     "build": "npm run clean &  babel ./components --out-dir ./lib --copy-files",
-    "pre-publish": "npm run build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   "dependencies": {
     "babel-runtime": "^6.18.0",
     "classnames": "^2.2.5",
-    "mff-tabs": "^1.1.0",
+    "mff-tabs": "^1.2.1",
     "omit.js": "^0.1.0",
     "rc-animate": "^2.3.1",
     "rc-util": "^4.0.2",

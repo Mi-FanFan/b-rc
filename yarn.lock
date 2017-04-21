@@ -4527,9 +4527,9 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
-mff-tabs@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mff-tabs/-/mff-tabs-1.1.0.tgz#843226d3ffa4315b0a5ee85fb3d029e236da235c"
+mff-tabs@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/mff-tabs/-/mff-tabs-1.2.1.tgz#8b588c38cbc7b53b1bc3cffbeeb5ba7f50629d0b"
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
@@ -5625,15 +5625,15 @@ promise@~7.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.x, prop-types@^15.5.6:
-  version "15.5.6"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.6.tgz#797a915b1714b645ebb7c5d6cc690346205bd2aa"
+prop-types@15.x, prop-types@^15.5.2, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@~15.5.0:
+  version "15.5.8"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
   dependencies:
     fbjs "^0.8.9"
 
-prop-types@^15.5.2, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@~15.5.0:
-  version "15.5.8"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
+prop-types@^15.5.6:
+  version "15.5.6"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.6.tgz#797a915b1714b645ebb7c5d6cc690346205bd2aa"
   dependencies:
     fbjs "^0.8.9"
 

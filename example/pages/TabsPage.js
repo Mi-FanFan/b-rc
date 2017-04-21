@@ -21,7 +21,7 @@ const TabsPage = () => {
           <TabPane key="10" tab={<span>选项10</span>}><span>10</span></TabPane>
         </Tabs>
         <Tabs ink={false}>
-          <TabPane key="1" tab={<span>选项1</span>}><span>1</span></TabPane>
+          <TabPane key="1" tab={<span>选项1</span>} innerHtml="<span>1</span>"/>
           <TabPane key="2" tab={<span>选项2</span>}><span>2</span></TabPane>
           <TabPane key="3" tab={<span>选项3</span>}><span>3</span></TabPane>
           <TabPane key="4" tab={<span>选项4</span>}><span>4</span></TabPane>
