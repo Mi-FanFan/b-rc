@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AjaxUpload from './AjaxUploader';
 import IframeUpload from './IframeUploader';
@@ -13,7 +13,7 @@ class ConfitionUpload extends Component {
     }
 
     componentDidMount() {
-        const {supportServerRender,onReady} = this.props;
+        const { supportServerRender, onReady } = this.props;
         if (supportServerRender) {
             /* eslint react/no-did-mount-set-state:0 */
             this.setState({
@@ -27,17 +27,21 @@ class ConfitionUpload extends Component {
         return typeof FormData !== 'undefined' ? AjaxUpload : IframeUpload;
     }
 
+    abort(file) {
+        this.inner.abort(file);
+    }
+
     render() {
-        const {supportServerRender} = this.props;
+        const { supportServerRender } = this.props;
         if (supportServerRender) {
             const { Component } = this.state;
             if (Component) {
-                return <Component {...this.props} ref="inner"/>;
+                return <Component {...this.props} ref={compo => this.inner = compo} />;
             }
             return null;
         }
         const Component = this.getComponent();
-        return <Component {...this.props} ref="inner"/>;
+        return <Component {...this.props} ref={compo => this.inner = compo} />;
     }
 }
 ConfitionUpload.propTypes = {

@@ -3,9 +3,9 @@
  */
 import React from 'react'
 import { Link } from 'react-router'
-import { Layout, Menu, Icon, Row, Col } from 'antd'
+import { Layout, Menu, Icon,   } from 'antd'
 const SubMenu = Menu.SubMenu
-const {Header, Content, Footer, Sider} = Layout
+const { Content,  Sider} = Layout
 
 export default class App extends React.Component {
   render () {

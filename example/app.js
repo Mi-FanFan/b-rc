@@ -14,6 +14,7 @@ import Typography from './pages/Typography'
 import LoadingPage from './pages/LoadingPage'
 import ModalPage from './pages/ModalPage'
 import TooltipPage from './pages/TooltipPage'
+import UploadPage from './pages/UploadPage'
 import NouFound from './pages/NouFound'
 import './component/app.less'
 import App from './component/app'
@@ -35,6 +36,7 @@ ReactDOM.render((
         <Route path="toaster" component={ToasterPage}/>
         <Route path="button" component={ButtonPage}/>
         <Route path="tooltip" component={TooltipPage}/>
+        <Route path="upload" component={UploadPage}/>
       </Route>
       <Route path="*" component={NouFound}/>
     </Route>
