@@ -17,5 +17,9 @@ export {default as Progress} from './progress'
 export {default as message } from './message';
 //Data Entry
 export {default as Input} from './input'
-export {default as Tooltip} from './tooltip'
 export {default as Upload} from './upload'
+
+//Data Display
+export {default as Tooltip} from './tooltip'
+export {default as Card} from './card'
+
