@@ -1,10 +1,10 @@
 import React from 'react';
 import { Icon, Modal, Tooltip } from 'antd';
-const noop = () => {};
+const noop = () => { };
 
 const copySupport = document.queryCommandSupported('copy');
 if (copySupport) {
-  document.addEventListener('copy', function(e) {
+  document.addEventListener('copy', function (e) {
     if (window.__react_amap_code) {
       const cd = e.clipboardData;
       cd.setData('text/plain', window.__react_amap_code);
@@ -41,17 +41,23 @@ export default class CodePreview extends React.Component {
         {
           copySupport ? <Tooltip title="复制代码" placement="left">
             <span onClick={() => { this.copyCode(); }}>
-              <Icon type="copy"/>
+              <Icon type="copy" />
             </span></Tooltip> : null
         }
         <Tooltip title="全屏查看" placement="right">
           <span onClick={() => { this.fullscreenPreview(); }}>
-            <Icon type="arrows-alt"/>
+            <Icon type="arrows-alt" />
           </span>
         </Tooltip>
       </div>
-      <div ref={(el)=>{this.codeCon = el;}}>
+      <div ref={(el) => { this.codeCon = el; }}>
         {props.children}
+        {
+          props.styleCode ?
+            <pre className="language-jsx">
+              <code className="css" dangerouslySetInnerHTML={{ __html: props.styleCode }} />
+            </pre>
+            : null}
       </div>
     </div>;
   }

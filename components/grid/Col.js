@@ -4,7 +4,6 @@ import classNames from 'classnames'
 
 const Col = (props) => {
 
-  const props = props
   const {span, order, offset, push, pull, className, children, prefixCls, ...others} = props
   let sizeClassObj = {};
   ['xs', 'sm', 'md', 'lg', 'xl'].forEach(size => {
@@ -17,13 +16,13 @@ const Col = (props) => {
 
     delete others[size]
 
-    sizeClassObj = assign({}, sizeClassObj, {
+    sizeClassObj = { ...sizeClassObj, 
       [`${prefixCls}-${size}-${sizeProps.span}`]: sizeProps.span !== undefined,
       [`${prefixCls}-${size}-order-${sizeProps.order}`]: sizeProps.order || sizeProps.order === 0,
       [`${prefixCls}-${size}-offset-${sizeProps.offset}`]: sizeProps.offset || sizeProps.offset === 0,
       [`${prefixCls}-${size}-push-${sizeProps.push}`]: sizeProps.push || sizeProps.push === 0,
       [`${prefixCls}-${size}-pull-${sizeProps.pull}`]: sizeProps.pull || sizeProps.pull === 0,
-    })
+    }
   })
   const classes = classNames({
     [`${prefixCls}-${span}`]: span !== undefined,

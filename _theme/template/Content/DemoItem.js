@@ -10,11 +10,12 @@ export default class DemoItem extends React.Component {
       <div className="demo-desc">{props.content}</div>
       <Row>
         <Col span={this.props.isWide ? 12 : 24 } className="demo-item-code">
-          <CodePreview title={props.title}>{props.code}</CodePreview>
+          <CodePreview title={props.title} styleCode={props.styleCode}>{props.code}</CodePreview>
         </Col>
         {
           this.props.isWide ? <Col span={12} className="demo-item-preview">
               {props.children}
+              {props.style? <style dangerouslySetInnerHTML={{__html:props.style}}/>:null}
             </Col> : null
         }
       </Row>

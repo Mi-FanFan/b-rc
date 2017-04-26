@@ -22,10 +22,10 @@ const Row = (props) => {
     }
     if (col.props && (gutter ) > 0) {
       return cloneElement(col, {
-        style: assign({}, {
+        style: {
           paddingLeft: (gutter ) / 2,
           paddingRight: (gutter) / 2,
-        }, col.props.style),
+        ...col.props.style},
       })
     }
     return col

@@ -45,7 +45,9 @@ export default class DemoArticle extends React.Component {
           title={item.meta.title}
           content={content}
           code={props.utils.toReactComponent(item.highlightedCode)}
+          styleCode={item.highlightedStyle}
           isWide={this.state.isWide}
+          style={item.style}
         >
           { this.state.isWide ? item.preview(React, ReactDOM) : null}
         </DemoItem>);

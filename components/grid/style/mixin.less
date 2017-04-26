@@ -1,3 +1,4 @@
+@import "../../style/themes/default";
 @import "../../style/mixins/index";
 
 // mixins for grid system
@@ -12,11 +13,11 @@
 
 .make-grid-columns() {
   .col(@index) {
-    @item: ~".@{ant-prefix}-col-@{index}, .@{ant-prefix}-col-xs-@{index}, .@{ant-prefix}-col-sm-@{index}, .@{ant-prefix}-col-md-@{index}, .@{ant-prefix}-col-lg-@{index}";
+    @item: ~".@{mff-prefix}-col-@{index}, .@{mff-prefix}-col-xs-@{index}, .@{mff-prefix}-col-sm-@{index}, .@{mff-prefix}-col-md-@{index}, .@{mff-prefix}-col-lg-@{index}";
     .col((@index + 1), @item);
   }
   .col(@index, @list) when (@index =< @grid-columns) {
-    @item: ~".@{ant-prefix}-col-@{index}, .@{ant-prefix}-col-xs-@{index}, .@{ant-prefix}-col-sm-@{index}, .@{ant-prefix}-col-md-@{index}, .@{ant-prefix}-col-lg-@{index}";
+    @item: ~".@{mff-prefix}-col-@{index}, .@{mff-prefix}-col-xs-@{index}, .@{mff-prefix}-col-sm-@{index}, .@{mff-prefix}-col-md-@{index}, .@{mff-prefix}-col-lg-@{index}";
     .col((@index + 1), ~"@{list}, @{item}");
   }
   .col(@index, @list) when (@index > @grid-columns) {
@@ -33,11 +34,11 @@
 
 .float-grid-columns(@class) {
   .col(@index) { // initial
-    @item: ~".@{ant-prefix}-col@{class}-@{index}";
+    @item: ~".@{mff-prefix}-col@{class}-@{index}";
     .col((@index + 1), @item);
   }
   .col(@index, @list) when (@index =< @grid-columns) { // general
-    @item: ~".@{ant-prefix}-col@{class}-@{index}";
+    @item: ~".@{mff-prefix}-col@{class}-@{index}";
     .col((@index + 1), ~"@{list}, @{item}");
   }
   .col(@index, @list) when (@index > @grid-columns) { // terminal
@@ -51,45 +52,45 @@
 
 // lesshint false
 .loop-grid-columns(@index, @class) when (@index > 0) {
-  .@{ant-prefix}-col@{class}-@{index} {
+  .@{mff-prefix}-col@{class}-@{index} {
     display: block;
     width: percentage((@index / @grid-columns));
   }
-  .@{ant-prefix}-col@{class}-push-@{index} {
+  .@{mff-prefix}-col@{class}-push-@{index} {
     left: percentage((@index / @grid-columns));
   }
-  .@{ant-prefix}-col@{class}-pull-@{index} {
+  .@{mff-prefix}-col@{class}-pull-@{index} {
     right: percentage((@index / @grid-columns));
   }
-  .@{ant-prefix}-col@{class}-offset-@{index} {
+  .@{mff-prefix}-col@{class}-offset-@{index} {
     margin-left: percentage((@index / @grid-columns));
   }
-  .@{ant-prefix}-col@{class}-order-@{index} {
+  .@{mff-prefix}-col@{class}-order-@{index} {
     order: @index;
   }
   .loop-grid-columns((@index - 1), @class);
 }
 
 .loop-grid-columns(@index, @class) when (@index = 0) {
-  .@{ant-prefix}-col@{class}-@{index} {
+  .@{mff-prefix}-col@{class}-@{index} {
     display: none;
   }
-  .@{ant-prefix}-col-push-@{index} {
+  .@{mff-prefix}-col-push-@{index} {
     left: auto;
   }
-  .@{ant-prefix}-col-pull-@{index} {
+  .@{mff-prefix}-col-pull-@{index} {
     right: auto;
   }
-  .@{ant-prefix}-col@{class}-push-@{index} {
+  .@{mff-prefix}-col@{class}-push-@{index} {
     left: auto;
   }
-  .@{ant-prefix}-col@{class}-pull-@{index} {
+  .@{mff-prefix}-col@{class}-pull-@{index} {
     right: auto;
   }
-  .@{ant-prefix}-col@{class}-offset-@{index} {
+  .@{mff-prefix}-col@{class}-offset-@{index} {
     margin-left: 0;
   }
-  .@{ant-prefix}-col@{class}-order-@{index} {
+  .@{mff-prefix}-col@{class}-order-@{index} {
     order: 0;
   }
 }
