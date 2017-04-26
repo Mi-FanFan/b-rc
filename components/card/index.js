@@ -55,6 +55,6 @@ Card.propTypes = {
 Card.defaultProps = {
   loading: false,
   prefixCls: 'mff-card',
-  bordered: true,
+  bordered: false,
 }
 export default Card

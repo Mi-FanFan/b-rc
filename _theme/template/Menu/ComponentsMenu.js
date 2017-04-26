@@ -7,6 +7,7 @@ const MenuItemGroup = Menu.ItemGroup;
 
 const componentOrder = [
   'General',
+  'Layout',
   'Data Entry',
   'Data Display',
   'Feedback',

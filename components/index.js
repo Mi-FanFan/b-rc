@@ -5,6 +5,10 @@
 export {default as Button} from './button';
 export {default as Icon} from './icon';
 
+//Layout
+export {default as Row} from './row'
+export {default as Col} from './col'
+
 //navigation
 export {default as BackTop} from './back-top'
 export {default as Tabs} from './tabs'
