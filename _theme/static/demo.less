@@ -1,0 +1,48 @@
+
+
+.grid-demo .demo-col{
+    
+    text-align: center;
+    padding: 30px 0;
+    
+}
+.demo-col-1  {
+            background: rgba(0, 160, 233, .7);
+        }
+.demo-cols(2);
+
+.grid-demo .demo-row{
+    margin-bottom: 8px;
+}
+
+.demo-cols(@index) when (@index<6) {
+    //.calc(@index);
+    .calc-mod-0(@index);
+    .calc-mod-1(@index);
+    .demo-cols(@index+1);
+}
+
+.calc-mod-0(@index) when ( mod(@index,2) = 0){
+
+    .demo-col-@{index}  {
+            
+            background: rgba(0, 160, 233, .7)
+        }
+}
+.calc-mod-1(@index) when (mod(@index,2)  = 1){
+
+    .demo-col-@{index}  {
+            background: hsla(0,0%,100%,2);
+        }
+}
+.mff-row-flex >div:not(.guter-row):nth-child(odd),
+.mff-row >div:not(.guter-row):nth-child(odd){
+    background: rgba(0, 160, 233, .7)
+}
+.mff-row-flex  >div:not(.guter-row),
+.mff-row >div:not(.guter-row){
+   padding: 6px 0;
+}
+.mff-row-flex {
+    background: #f5f5f5;
+}

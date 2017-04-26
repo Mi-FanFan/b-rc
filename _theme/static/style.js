@@ -6,3 +6,4 @@ import './highlight.less';
 import './doc.less';
 import './notfound.less';
 import './footer.less';
+import './demo.less';
