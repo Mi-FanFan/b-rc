@@ -97,6 +97,6 @@ module.exports = {
       path.join(__dirname, 'src'),
       'node_modules'
     ],
-    extensions: ['.web.js', '.js', '.json', '.jsx', '.css'],
+    extensions: ['.js', '.json', '.jsx', '.css'],
   }
 };

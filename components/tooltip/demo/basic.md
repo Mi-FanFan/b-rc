@@ -11,9 +11,9 @@ import { Tooltip, Button } from 'b-rc';
 ReactDOM.render(
     <div className="toaster">
       <Tooltip title="Default Tooltip">
-        <Button type="primary">Top</Button>
-        <span>Tooltip will show when mouse enter.</span>
+        <span style={{display:'inline-block'}}>Tooltip will show when mouse enter.</span>
       </Tooltip>
+      <br />
       <Tooltip title="danger Tooltip" place="left">
         <Button type="danger">Top</Button>
       </Tooltip>
