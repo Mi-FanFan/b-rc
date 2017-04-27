@@ -10,7 +10,8 @@
     "deploy": "npm run site && bisheng gh-pages",
     "clean": "rimraf ./lib",
     "build": "npm run clean &  babel ./components --out-dir ./lib --copy-files",
-    "prepublish": "npm run build"
+    "dist": "gulp default",
+    "prepublish": "npm run build && npm run dist"
   },
   "repository": {
     "type": "git",

@@ -32,7 +32,12 @@ gulp.task('dist', function () {
     ''].join('\n')
   var processors = [
     autoprefixer({
-      browsers: 'last 1 version'
+      browsers: [
+        '>1%',
+        'last 4 versions',
+        'Firefox ESR',
+        'not ie < 9', // React doesn't support IE8 anyway
+      ]
     }),
   ]
   gulp.src(paths)
