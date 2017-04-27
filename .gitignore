@@ -6,6 +6,7 @@ node_modules
 *.iml
 
 lib
+dist
 npm-debug.log
 
 _site

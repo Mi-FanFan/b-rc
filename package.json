@@ -1,6 +1,6 @@
 {
   "name": "b-rc",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "react components for budee front-end project",
   "main": "./lib",
   "scripts": {
@@ -69,6 +69,14 @@
     "eslint-plugin-react": "*",
     "extract-text-webpack-plugin": "*",
     "file-loader": "*",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^1.8.8",
+    "gulp-less": "^3.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-postcss": "^6.4.0",
+    "gulp-rename": "^1.2.2",
     "html-webpack-plugin": "*",
     "ignore-styles": "^5.0.1",
     "json-loader": "^0.5.4",
