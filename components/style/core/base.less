@@ -57,34 +57,27 @@ input::-ms-clear, input::-ms-reveal {
 
 // Links
 a {
-  color: @link-color;
-  background: transparent;
-  text-decoration: none;
-  outline: none;
   cursor: pointer;
-  transition: color .3s ease;
-
-  &:focus {
-    text-decoration: underline;
-    text-decoration-skip: ink;
-  }
+  text-decoration: none;
+  color: #555;
 
   &:hover {
-    color: @link-hover-color;
+    color:#c21e25;
   }
 
   &:active {
-    color: @link-active-color;
+    color:#c21e25;
   }
 
   &:active,
   &:hover {
+    color:#c21e25;
     outline: 0;
     text-decoration: none;
   }
 
   &[disabled] {
-    color: @disabled-color;
+    color: #ccc;
     cursor: not-allowed;
     pointer-events: none;
   }
