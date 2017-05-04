@@ -21,6 +21,7 @@ export {default as Progress} from './progress'
 export {default as message } from './message';
 //Data Entry
 export {default as Input} from './input'
+export {default as InputNumber} from './input-number'
 export {default as Upload} from './upload'
 
 //Data Display
