@@ -18,6 +18,7 @@ const Progress = props => {
         showInfo,
         gapDegree,
         gapPosition,
+        percentLineStyle,
         ...restProps
     } = props;
     const progressStatus = parseInt(percent.toString(), 10) >= 100 && !('status' in props) ? 'success' : (status || 'normal');
@@ -38,6 +39,7 @@ const Progress = props => {
 
     if (type === 'line') {
         const percentStyle = {
+            ...percentLineStyle,
             width: `${percent}%`,
             height: strokeWidth || 10,
         };
@@ -74,6 +76,7 @@ Progress.propTypes = {
     trailColor: PropTypes.string,
     format: PropTypes.func,
     gapDegree: PropTypes.number,
+    percentLineStyle:PropTypes.object,//设置进度条线的样式
 };
 
 Progress.defaultProps = {

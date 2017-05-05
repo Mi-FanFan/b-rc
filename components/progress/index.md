@@ -25,3 +25,4 @@ title: Progress 进度条
 | strokeWidth `(type=line)` | 进度条线的宽度，单位 px | number | 10 |
 | strokeWidth `(type=circle)` | 圆形进度条线的宽度，单位是进度条画布宽度的百分比 | number | 6 |
 | width `(type=circle)` | 圆形进度条画布宽度，单位 px | number | 132 |
+| percentLineStyle  | 进度条线的样式 | object |  |
