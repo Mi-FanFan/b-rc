@@ -15,6 +15,7 @@ import LoadingPage from './pages/LoadingPage'
 import ModalPage from './pages/ModalPage'
 import TooltipPage from './pages/TooltipPage'
 import UploadPage from './pages/UploadPage'
+import InputNumberPage from './pages/InputNumberPage'
 import NouFound from './pages/NouFound'
 import './component/app.less'
 import App from './component/app'
@@ -37,6 +38,7 @@ ReactDOM.render((
         <Route path="button" component={ButtonPage}/>
         <Route path="tooltip" component={TooltipPage}/>
         <Route path="upload" component={UploadPage}/>
+        <Route path="input-number" component={InputNumberPage}/>
       </Route>
       <Route path="*" component={NouFound}/>
     </Route>

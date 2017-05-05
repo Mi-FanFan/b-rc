@@ -16,7 +16,7 @@ export default class App extends React.Component {
         <Sider style={{backgroundColor:'#fff'}}>
           <div className="ant-layout-logo"/>
           <Menu mode="inline" theme="light"
-                defaultSelectedKeys={['1']} defaultOpenKeys={['sub1', 'sub2', 'sub3']}>
+                defaultSelectedKeys={['1']} defaultOpenKeys={['sub1', 'sub2', 'sub3','sub4']}>
             <SubMenu key="sub1" title={<span><Icon type="user"/>General</span>}>
               <Menu.Item key="1">
                 <Link to={'components/icon'}>Icon</Link>
@@ -42,6 +42,11 @@ export default class App extends React.Component {
             <SubMenu key="sub3" title={<span><Icon type="notification"/>Feedback</span>}>
               <Menu.Item key="9">
                 <Link to={'components/toaster'}>Toaster</Link>
+              </Menu.Item>
+            </SubMenu>
+            <SubMenu key="sub4" title={<span><Icon type="notification"/>Data Entry</span>}>
+              <Menu.Item key="10">
+                <Link to={'components/input-number'}>InputNumber</Link>
               </Menu.Item>
             </SubMenu>
           </Menu>

@@ -1,9 +1,110 @@
 @import "../../style/themes/default";
 @import "../../style/mixins/index";
+@import "../../input/style/mixin";
 
+@input-number-prefix-cls: ~"@{mff-prefix}-input-number";
 
-// Input styles
-.@{mff-prefix}-input-number {
-
+.handler-disabled() {
+  opacity: 0.72;
+  color: #ccc !important;
+  cursor: not-allowed;
 }
 
+.@{input-number-prefix-cls} {
+  margin: 0;
+  padding: 0 24px;
+  font-size: @font-size-base;
+  height: @input-height-base;
+  display: inline-block;
+  position: relative;
+  //border: @border-width-base @border-style-base @border-color-base;
+  border-radius: @border-radius-base;
+  width: 120px;
+
+  &-handler {
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 24px;
+    background: #F5F5F5;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    border-radius: @border-radius-base;
+    text-align: center;
+    overflow: hidden;
+    font-size: 18px;
+    &:active {
+      background: #f4f4f4;
+    }
+    &:hover {
+      color: @primary-5;
+    }
+  }
+
+  &:hover {
+    .hover();
+  }
+
+  &-disabled {
+    .disabled();
+  }
+
+  &-input {
+    position: absolute;
+    left: 30px;
+    width: 60px;
+    text-align: center;
+    outline: 0;
+    -moz-appearance: textfield;
+    height: @input-height-base;
+    transition: all 0.3s linear;
+    color: @input-color;
+    border: @border-width-base @border-style-base @border-color-base;
+    border-radius: @border-radius-base;
+    padding: 2px 7px;
+    .placeholder();
+
+    &[disabled] {
+      .disabled();
+    }
+    &-focused {
+      border-color: @primary-color;
+      outline: 0;
+      box-shadow: 0 0 @outline-blur-size @outline-width fade(@primary-color, 20%);
+    }
+  }
+
+  &-handler-inc {
+    border: @border-width-base @border-style-base @border-color-base;
+    cursor: pointer;
+    right: 0;
+  }
+
+  &-handler-dec {
+    border: @border-width-base @border-style-base @border-color-base;
+    left: 0;
+    cursor: pointer;
+  }
+
+  .@{input-number-prefix-cls}-handler-inc&-handler-disabled,
+  .@{input-number-prefix-cls}-handler-dec&-handler-disabled {
+    .handler-disabled();
+  }
+
+  &-disabled {
+    .@{input-number-prefix-cls}-input {
+      opacity: 0.72;
+      cursor: not-allowed;
+      background-color: #f3f3f3;
+    }
+    .@{input-number-prefix-cls}-handler {
+      .handler-disabled();
+    }
+    .@{input-number-prefix-cls}-handler-inc,
+    .@{input-number-prefix-cls}-handler-dec {
+      .handler-disabled();
+    }
+  }
+
+}
