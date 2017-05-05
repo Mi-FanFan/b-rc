@@ -217,6 +217,7 @@ InputNumber.defaultProps = {
   prefixCls: 'mff-input-number',
   disabled: false,
   step:1,
+  onChange:()=>{},
 }
 InputNumber.propTypes = {
   prefixCls: PropTypes.string,
@@ -228,4 +229,5 @@ InputNumber.propTypes = {
   step: PropTypes.number,
   className: PropTypes.string,
   name: PropTypes.string,
+  onChange: PropTypes.func,
 }
