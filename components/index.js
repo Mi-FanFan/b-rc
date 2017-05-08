@@ -28,4 +28,5 @@ export {default as Upload} from './upload'
 export {default as Tooltip} from './tooltip'
 export {default as Card} from './card'
 export {default as TimeLine} from './timeline'
+export {default as Collapse} from './collapse'
 
