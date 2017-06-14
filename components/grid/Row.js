@@ -46,6 +46,7 @@ Row.propTypes = {
 Row.defaultProps = {
   gutter: 0,
   prefixCls: 'mff-row',
+  type: 'flex',
 }
 
 export default Row

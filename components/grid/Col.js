@@ -1,5 +1,5 @@
 import React from 'react'
-import { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 const Col = (props) => {
@@ -16,7 +16,8 @@ const Col = (props) => {
 
     delete others[size]
 
-    sizeClassObj = { ...sizeClassObj, 
+    sizeClassObj = {
+      ...sizeClassObj,
       [`${prefixCls}-${size}-${sizeProps.span}`]: sizeProps.span !== undefined,
       [`${prefixCls}-${size}-order-${sizeProps.order}`]: sizeProps.order || sizeProps.order === 0,
       [`${prefixCls}-${size}-offset-${sizeProps.offset}`]: sizeProps.offset || sizeProps.offset === 0,
@@ -35,10 +36,8 @@ const Col = (props) => {
   return <div {...others} className={classes}>{children}</div>
 }
 
-
 const stringOrNumber = PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 const objectOrNumber = PropTypes.oneOfType([PropTypes.object, PropTypes.number])
-
 
 Col.propTypes = {
   span: stringOrNumber,
@@ -59,4 +58,4 @@ Col.defaultProps = {
   prefixCls: 'mff-col',
 }
 
-export default Col;
+export default Col
