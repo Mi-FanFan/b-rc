@@ -48,6 +48,12 @@ export default class App extends React.Component {
               <Menu.Item key="10">
                 <Link to={'components/input-number'}>InputNumber</Link>
               </Menu.Item>
+              <Menu.Item key="11">
+                <Link to={'components/tags-input'}>TagsInput</Link>
+              </Menu.Item>
+              <Menu.Item key="12">
+                <Link to={'components/input'}>Input</Link>
+              </Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>

@@ -43,7 +43,7 @@
 @text-color-dark        : fade(#fff, 91%);
 @text-color-secondary-dark: fade(#fff, 67%);
 @disabled-color-dark    : fade(#fff, 35%);
-@font-size-base         : 12px;
+@font-size-base         : 14px;
 @font-size-lg           : @font-size-base + 10px;
 @font-size-sm           : 16px;
 @line-height-base       : 1.5;
@@ -83,7 +83,7 @@
 // Outline
 @outline-blur-size      : 0;
 @outline-width          : 2px;
-@outline-color          : #fff;
+@outline-color          : @primary-color;
 
 // Background color
 @background-color-base  : #f7f7f7;        // basic gray background
@@ -283,3 +283,9 @@
 @card-head-height: 48px;
 @card-head-color: @heading-color;
 @card-head-background: @component-background;
+
+// Tag
+// --
+@tag-default-bg: #f3f3f3;
+@tag-default-color: @text-color;
+@tag-font-size: @font-size-base;

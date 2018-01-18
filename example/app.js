@@ -16,6 +16,8 @@ import ModalPage from './pages/ModalPage'
 import TooltipPage from './pages/TooltipPage'
 import UploadPage from './pages/UploadPage'
 import InputNumberPage from './pages/InputNumberPage'
+import TagsInputPage from './pages/TagsInputPage'
+import InputPage from './pages/InputPage'
 import NouFound from './pages/NouFound'
 import './component/app.less'
 import App from './component/app'
@@ -39,6 +41,8 @@ ReactDOM.render((
         <Route path="tooltip" component={TooltipPage}/>
         <Route path="upload" component={UploadPage}/>
         <Route path="input-number" component={InputNumberPage}/>
+        <Route path="tags-input" component={TagsInputPage}/>
+        <Route path="input" component={InputPage}/>
       </Route>
       <Route path="*" component={NouFound}/>
     </Route>

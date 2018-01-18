@@ -29,4 +29,5 @@ export {default as Tooltip} from './tooltip'
 export {default as Card} from './card'
 export {default as Timeline} from './timeline'
 export {default as Collapse} from './collapse'
+export {default as TagsInput} from './tags-input'
 

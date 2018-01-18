@@ -1,0 +1,32 @@
+# IntelliJ project files
+.idea
+*.iml
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+example/
+docs/
+.vscode/
+_site/
+_theme/
+articles/
+dist/
+site/
+
+.babelrc
+.editorconfig
+.eslintrc
+.gitignore
+.npmignore
+bisheng.config.js
+gulpfile.js
+webpack.config.js
+yarn.lock

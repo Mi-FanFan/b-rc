@@ -7,6 +7,17 @@ export default class Input extends React.Component {
     super(props)
     this.renderInput = this.renderInput.bind(this)
     this.renderLabel = this.renderLabel.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this)
+  }
+
+  handleKeyDown(e) {
+    const { onPressEnter, onKeyDown } = this.props;
+    if (e.keyCode === 13 && onPressEnter) {
+      onPressEnter(e);
+    }
+    if (onKeyDown) {
+      onKeyDown(e);
+    }
   }
 
   renderLabel (children) {
@@ -28,18 +39,20 @@ export default class Input extends React.Component {
   }
 
   renderInput () {
-    const {type, placeholder, size, className, prefixCls} = this.props
+    const {type, placeholder, size, className, prefixCls,saveRef} = this.props
     const otherProps = omit(this.props,[
       'prefixCls',
       'prefix',
-      'suffix'
-    ])  
+      'suffix',
+      'onPressEnter',
+      'saveRef',
+    ])
     const inputClassName = classNames(prefixCls, {
       [`${prefixCls}-sm`]: size === 'small',
       [`${prefixCls}-lg`]: size === 'large',
     }, className)
     return (
-      <input type={type} placeholder={placeholder} className={inputClassName} {...otherProps}/>
+      <input type={type} placeholder={placeholder} className={inputClassName} onKeyDown={this.handleKeyDown} ref={saveRef} {...otherProps}/>
     )
   }
 
@@ -66,4 +79,7 @@ Input.propTypes = {
   className: PropTypes.string,
   prefix: PropTypes.node,
   suffix: PropTypes.node,
+  onPressEnter: PropTypes.func,
+  onKeyDown:  PropTypes.func,
+  saveRef:PropTypes.func,//ref
 }
