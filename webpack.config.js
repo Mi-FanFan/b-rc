@@ -7,6 +7,7 @@ const port = 8081
 module.exports = {
   context: path.join(__dirname, 'example'),
   entry: [
+    'babel-polyfill',
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${port}`,
     'webpack/hot/only-dev-server',
@@ -16,7 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: './bundle.js'
   },
-  devtool:'#eval-source-map',
+  //devtool:'#eval-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,

@@ -6,8 +6,7 @@ import classNames from 'classnames';
 import omit from 'lodash/omit';
 import Icon from '../icon';
 import getScroll from '../_util/getScroll';
-import getRequestAnimationFrame from '../_util/getRequestAnimationFrame';
-const reqAnimFrame = getRequestAnimationFrame();
+
 const currentScrollTop = () => {
   return window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
 };
@@ -52,10 +51,10 @@ export default class BackTop extends React.Component {
       const time = timestamp - startTime;
       this.setScrollTop(easeInOutCubic(time, scrollTop, 0, 450));
       if (time < 450) {
-        reqAnimFrame(frameFunc);
+        requestAnimationFrame(frameFunc);
       }
     };
-    reqAnimFrame(frameFunc);
+    requestAnimationFrame(frameFunc);
     (this.props.onClick || noop)(e);
   };
 
