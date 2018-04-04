@@ -1,6 +1,6 @@
 {
   "name": "b-rc",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "react components for budee front-end project",
   "main": "./lib",
   "scripts": {
@@ -27,7 +27,7 @@
   "dependencies": {
     "babel-runtime": "^6.18.0",
     "classnames": "^2.2.5",
-    "mff-tabs": "^1.2.1",
+    "mff-tabs": "^1.2.4",
     "rc-animate": "^2.4.4",
     "rc-util": "^4.0.2",
     "react-tooltip": "^3.3.0",

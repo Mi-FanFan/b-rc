@@ -24,19 +24,20 @@ class Tabs extends Component {
 
   render() {
     let {
-      prefixCls,
-      className = '',
-      size,
-      type = 'line',
-      tabPosition,
-      children,
-      tabBarExtraContent,
-      tabBarStyle,
-      onTabClick,
-      onPrevClick,
-      onNextClick,
-      animated,
       ink,
+      size,
+      animated,
+      children,
+      prefixCls,
+      onTabClick,
+      tabPosition,
+      onPrevClick,
+      tabBarStyle,
+      onNextClick,
+      hasTabHeader,
+      type = 'line',
+      className = '',
+      tabBarExtraContent,
     } = this.props;
     let { inkBarAnimated, tabPaneAnimated } = typeof animated === 'object' ? {
       inkBarAnimated: animated.inkBar, tabPaneAnimated: animated.tabPane,
@@ -83,10 +84,11 @@ class Tabs extends Component {
       <MffTabs
         {...this.props}
         className={cls}
-        tabBarPosition={tabPosition}
+        hasTabHeader={hasTabHeader}
         renderTabBar={renderTabBar}
-        renderTabContent={() => <TabContent animated={tabPaneAnimated} animatedWithMargin />}
+        tabBarPosition={tabPosition}
         onChange={this.handleChange}
+        renderTabContent={() => <TabContent animated={tabPaneAnimated} animatedWithMargin />}
       >
         {children}
       </MffTabs>
@@ -117,6 +119,7 @@ Tabs.defaultProps = {
   prefixCls: 'mff-tabs',
   animated: true,
   ink: true,
+  hasTabHeader: true,
 }
 
 Tabs.TabPane = TabPane;

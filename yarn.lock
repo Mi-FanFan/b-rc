@@ -5956,15 +5956,15 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
-mff-tabs@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/mff-tabs/-/mff-tabs-1.2.1.tgz#8b588c38cbc7b53b1bc3cffbeeb5ba7f50629d0b"
+mff-tabs@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/mff-tabs/-/mff-tabs-1.2.4.tgz#3239e19f90c94e83f1f0f7678df70ab4e69617d9"
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
     create-react-class "15.x"
     prop-types "15.x"
-    react-hammerjs "~0.5.0"
+    react-hammerjs "^1.0.1"
 
 micromatch@^2.1.5, micromatch@^2.3.11:
   version "2.3.11"
@@ -8165,9 +8165,9 @@ react-dom@^16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-hammerjs@~0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/react-hammerjs/-/react-hammerjs-0.5.0.tgz#aa20e5c5f44d660f3e8e87ed11282f12173e77ae"
+react-hammerjs@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-hammerjs/-/react-hammerjs-1.0.1.tgz#bc1ed9e9ef7da057163fb169ce12917b6d6ca7d8"
   dependencies:
     hammerjs "^2.0.8"
 

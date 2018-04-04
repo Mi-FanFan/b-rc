@@ -8,7 +8,7 @@ const TabPane = Tabs.TabPane;
 const TabsPage = () => {
     return (
       <div style={{width:'400px'}}>
-        <Tabs>
+        <Tabs hasTabHeader={false}>
           <TabPane key="1" tab={<span>选项1</span>}><span>1</span></TabPane>
           <TabPane key="2" tab={<span>选项2</span>}><span>2</span></TabPane>
           <TabPane key="3" tab={<span>选项3</span>}><span>3</span></TabPane>
