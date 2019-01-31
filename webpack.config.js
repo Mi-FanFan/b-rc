@@ -4,7 +4,9 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const port = 8081
+
 module.exports = {
+  mode: 'development',
   context: path.join(__dirname, 'example'),
   entry: [
     'babel-polyfill',
@@ -42,19 +44,18 @@ module.exports = {
         test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          plugins: [
-            ['import', [{libraryName: "antd", style: true}]],
-          ],
-          cacheDirectory: true
-        }
+        // query: {
+        //   plugins: [
+        //     ['import', [{libraryName: "antd", style: true}]],
+        //   ],
+        //   cacheDirectory: true
+        // }
       },
       {
         test: /\.less$/,
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader',
           'less-loader',
         ]
       },
@@ -63,7 +64,6 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader',
         ]
       },
       {

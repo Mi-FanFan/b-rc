@@ -11,7 +11,6 @@ export default class App extends React.Component {
   render () {
     const {children} = this.props
     return (
-
       <Layout className="main-wrapper">
         <Sider style={{backgroundColor:'#fff'}}>
           <div className="ant-layout-logo"/>
